@@ -90,7 +90,7 @@ main{
     font-family: 'Poppins', sans-serif;
 }
 .start__page{
-    background-image: url('https://asmtreinamentos.com.br/wp-content/uploads/2019/08/soldagem-por-resistencia-869x439.jpg');
+    background: url('Imagens/ponto-solda.jpg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -641,57 +641,56 @@ h3{
     animation: background1 20s linear infinite alternate;
 }
 .swiper__background.background-1{
-    background: url('http://oficinaagnus.com.br/images/solda-ponto-2-g.png');
+    background: url('/Imagens/ponto-solda1.png');
     background-size: 120% 120%;
-
 }
 .swiper__background.background-2{
-    background: url('https://leas.com.br/wp-content/uploads/2022/03/automacao-02-1.jpg');
+    background: url('/Imagens/ponto-solda2.jpg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-3{
-    background: url('https://isotron.com.br/wp-content/uploads/2019/10/solda_ponto-682x384.jpg');
+    background: url('/Imagens/ponto-solda3.jpeg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-4{
-    background: url('https://www.assemblymag.com/ext/resources/Issues/2017/January/rivets/asb0117riv2.jpg');
+    background: url('Imagens/ponto-solda4.jpg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-5{
-    background: url('https://19590060.fs1.hubspotusercontent-na1.net/hubfs/19590060/large%20inconel%20spot%20welding%20(1).svg');
+    background: url('Imagens/ponto-solda5.jpg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-6{
-    background: url('https://mzusinagem.com.br/wp-content/uploads/2021/08/solda-a-ponto-1.jpg');
+    background: url('Imagens/ponto-solda6.jpg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-7{
-    background: url('https://fractory.com/wp-content/uploads/2022/05/spot-welding.jpg.webp');
+    background: url('Imagens/ponto-solda7.jpg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-8{
-    background: url('https://19590060.fs1.hubspotusercontent-na1.net/hub/19590060/hubfs/NADCAP%20accredited%20resistance%20welding%20vanes%20on%20a%20stator%20for%20a%20jet%20engine.png?width=575&name=NADCAP%20accredited%20resistance%20welding%20vanes%20on%20a%20stator%20for%20a%20jet%20engine.png');
+    background: url('Imagens/ponto-solda8.jpeg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-9{
-    background: url('https://weldingdigest.aws.org/hubfs/Welding%20Digest/AWS%20Publications%20Photos/Lead%20photo-1.jpg');
+    background: url('Imagens/ponto-solda9.jpeg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-10{
-    background: url('https://www.uti.edu/images/default-source/blog/spot-welding-how-it-works/spot-welding_hero.webp');
+    background: url('Imagens/ponto-solda10.jpeg');
     background-size: 120% 120%;
 
 }
 .swiper__background.background-11{
-    background: url('https://www.fronius.com/~/protected-media/international/pw/magazin/02-2018/pw-magazin-02-2018-in-die-zange-genommen-169.jpg');
+    background: url('Imagens/ponto-solda11.jpeg');
     background-size: 120% 120%;
 
 }
