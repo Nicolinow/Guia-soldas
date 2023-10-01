@@ -184,26 +184,24 @@ h2{
 .accordion{
     margin-top: 135vh;
     position: absolute;
+    height: 20dvh;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     transform: skew(-7deg);
     width: 75dvw;
     gap: 10px;
 }
 .card:not(.active) {
-
-    flex-grow: 1;
     height: 5vh;
     overflow: hidden;
     transition: all 0.8s;
-  }
+}
 .card.active{
     opacity: 1;
     box-shadow: rgba(19, 19, 19, 0.3) 0px 19px 38px, rgba(41, 41, 41, 0.22) 0px 15px 12px;
     z-index: -1;
-    flex-grow: 6;
     transition: all 1s;
 }
 .card.active p{
