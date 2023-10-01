@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificador de Qualidade da Solda</title>
+</head>
+<body>
+    <h1>Verificador de Qualidade da Solda</h1>
+    <form id="weldQualityChecker">
+        <label for="dimensional">Dimensão (mm):</label>
+        <input type="number" id="dimensional" required><br>
+
+        <label for="visualDefects">Defeitos Visuais (0 = Sem Defeitos, 1 = Defeitos Visíveis):</label>
+        <input type="number" id="visualDefects" required><br>
+
+        <label for="minDimensional">Dimensão Mínima Aceitável (mm):</label>
+        <input type="number" id="minDimensional" required><br>
+
+        <label for="maxDimensional">Dimensão Máxima Aceitável (mm):</label>
+        <input type="number" id="maxDimensional" required><br>
+
+        <label for="maxVisualDefects">Máximo de Defeitos Visuais Aceitável (0 = Sem Defeitos, 1 = Defeitos Visíveis):</label>
+        <input type="number" id="maxVisualDefects" required><br>
+
+        <input type="submit" value="Verificar Qualidade">
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("weldQualityChecker").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obter os valores de entrada
+            const dimensional = parseFloat(document.getElementById("dimensional").value);
+            const visualDefects = parseFloat(document.getElementById("visualDefects").value);
+            const minDimensional = parseFloat(document.getElementById("minDimensional").value);
+            const maxDimensional = parseFloat(document.getElementById("maxDimensional").value);
+            const maxVisualDefects = parseFloat(document.getElementById("maxVisualDefects").value);
+
+            // Avaliar a qualidade com base nos critérios
+            const quality = verificarQualidade(dimensional, visualDefects, minDimensional, maxDimensional, maxVisualDefects);
+
+            // Exibir o resultado
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<p>Qualidade da Solda: ${quality}</p>`;
+        });
+
+        function verificarQualidade(dimensional, visualDefects, minDimensional, maxDimensional, maxVisualDefects) {
+            // Implemente sua lógica de verificação de qualidade aqui
+            if (dimensional >= minDimensional && dimensional <= maxDimensional && visualDefects <= maxVisualDefects) {
+                return "Aceitável";
+            } else {
+                return "Rejeitada";
+            }
+        }
+    </script>
+</body>
+</html>

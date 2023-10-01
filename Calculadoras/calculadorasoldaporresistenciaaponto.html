@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Solda por Resistência a Ponto</title>
+</head>
+<body>
+    <h1>Calculadora de Solda por Resistência a Ponto</h1>
+    <form id="weldCalculator">
+        <label for="current">Corrente de Soldagem (A):</label>
+        <input type="number" id="current" required><br>
+
+        <label for="weldTime">Tempo de Soldagem (s):</label>
+        <input type="number" id="weldTime" required><br>
+
+        <label for="pressure">Pressão dos Eletrodos (kN):</label>
+        <input type="number" id="pressure" required><br>
+
+        <label for="postPressureTime">Tempo de Pós-Pressão (s):</label>
+        <input type="number" id="postPressureTime" required><br>
+
+        <label for="currentRiseTime">Tempo de Subida de Corrente (s):</label>
+        <input type="number" id="currentRiseTime" required><br>
+
+        <label for="currentFallTime">Tempo de Descida de Corrente (s):</label>
+        <input type="number" id="currentFallTime" required><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("weldCalculator").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obter os valores de entrada
+            const current = parseFloat(document.getElementById("current").value);
+            const weldTime = parseFloat(document.getElementById("weldTime").value);
+            const pressure = parseFloat(document.getElementById("pressure").value);
+            const postPressureTime = parseFloat(document.getElementById("postPressureTime").value);
+            const currentRiseTime = parseFloat(document.getElementById("currentRiseTime").value);
+            const currentFallTime = parseFloat(document.getElementById("currentFallTime").value);
+
+            // Realizar cálculos
+            const shearResistance = current * weldTime;
+            const weldDiameter = Math.sqrt((shearResistance * 4) / (Math.PI * pressure));
+            const weldPenetration = current * (weldTime + postPressureTime);
+            const indentation = current * (currentRiseTime + currentFallTime);
+            const heatAffectedZone = current * (weldTime + postPressureTime + currentRiseTime + currentFallTime);
+
+            // Exibir o resultado
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `
+                <p>Resistência ao Cisalhamento (R): ${shearResistance.toFixed(2)} kN</p>
+                <p>Diâmetro da Solda (D): ${weldDiameter.toFixed(2)} mm</p>
+                <p>Penetração da Solda (P): ${weldPenetration.toFixed(2)} mm</p>
+                <p>Indentação (I): ${indentation.toFixed(2)} kA*s</p>
+                <p>Zona Termicamente Afetada (ZTA): ${heatAffectedZone.toFixed(2)} kA*s</p>
+            `;
+        });
+    </script>
+</body>
+</html>
+

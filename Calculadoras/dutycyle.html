@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Duty Cycle</title>
+</head>
+<body>
+    <h1>Calculadora de Duty Cycle</h1>
+    <p>Calcular o Duty Cycle para a escolha de um transformador AC - SAW Engineering</p>
+    
+    <label for="tempoFuncionamento">Tempo de Funcionamento (horas):</label>
+    <input type="number" id="tempoFuncionamento" step="0.01">
+    
+    <label for="correnteMaxima">Corrente Máxima (Amps):</label>
+    <input type="number" id="correnteMaxima">
+    
+    <button onclick="calcularDutyCycle()">Calcular</button>
+    
+    <p>Duty Cycle: <span id="resultadoDutyCycle"></span></p>
+
+    <script>
+        function calcularDutyCycle() {
+            // Obter valores do input
+            var tempoFuncionamento = parseFloat(document.getElementById("tempoFuncionamento").value);
+            var correnteMaxima = parseFloat(document.getElementById("correnteMaxima").value);
+            
+            // Calcular o Duty Cycle
+            var dutyCycle = (tempoFuncionamento / 24) * 100; // Supondo um período de 24 horas
+            
+            // Exibir o resultado
+            document.getElementById("resultadoDutyCycle").textContent = dutyCycle.toFixed(2) + "%";
+        }
+    </script>
+    <p>Calculadora que permite inserir o tempo de funcionamento em horas e a corrente máxima em Amps. Quando o botão "Calcular" é clicado, ele calculará o Duty Cycle com base nos valores inseridos e exibirá o resultado na página.</p>
+</body>
+</html>

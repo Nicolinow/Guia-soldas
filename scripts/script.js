@@ -5,12 +5,21 @@ window.addEventListener('scroll', () => {
     const body = document.querySelector('body')
     const mouse = document.querySelector('#cursor')
     const mouse2 = document.querySelector('#pointer')
+    const seemore = document.querySelector('.see__more')
+    const seemoretwo = document.querySelector('.see__more.two')
+    const seemorethree = document.querySelector('.see__more.three')
+    const seemorefour = document.querySelector('.see__more.four')
+    const seemorefive = document.querySelector('.see__more.five')
 
     const shrinkPoint1 = 900; 
     const shrinkPoint2 = 550;
+    const shrinkPoint25 = 650;
     const shrinkPoint3 = 3300;
+    const shrinkPoint35 = 1950
     const shrinkPoint4 = 3500;
-    const shrinkPoints = [6100, 6400, 6700, 6950, 7200, 7400, 7700, 7900, 8100];
+    const shrinkPoint45 = 4000;
+    const shrinkPoint5 = 10300;
+    const shrinkPoints = [6450, 6750, 7050, 7300, 7500, 7750, 8050, 8350, 8550];
     const elements = document.querySelectorAll('[class^="det"]');
     const customClass = 'custom';
     elements.forEach((element, index) => {
@@ -64,6 +73,11 @@ window.addEventListener('scroll', () => {
     } else {
         shadowcard.classList.remove('active');
     }
+    if (scrollY > shrinkPoint25){
+        seemore.classList.add('active')
+    } else {
+        seemore.classList.remove('active')
+    }
     if (scrollY > shrinkPoint3){
         body.classList.add('active')
         floatingHeader.classList.add('active1');
@@ -77,6 +91,26 @@ window.addEventListener('scroll', () => {
     } else{
         mouse.classList.remove('active')
         mouse2.classList.remove('active')
+    }
+    if (scrollY > shrinkPoint35){
+      seemoretwo.classList.add('active')
+    } else{
+      seemoretwo.classList.remove('active')
+    }
+    if (scrollY > shrinkPoint45){
+      seemorethree.classList.add('active')
+    }else {
+      seemorethree.classList.remove('active')
+    }
+    if (scrollY > shrinkPoint5){
+      seemorefour.classList.add('active')
+    }else {
+      seemorefour.classList.remove('active')
+    }
+    if (scrollY > shrinkPoint5){
+      seemorefive.classList.add('active')
+    }else {
+      seemorefive.classList.remove('active')
     }
 });
 function hoverCard(card) {

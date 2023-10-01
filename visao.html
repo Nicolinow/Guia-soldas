@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylevisao.css">
+</head>
+<body>
+    <div id='cursor'></div>
+    <div id='pointer'></div>
+    <main>
+        <div class="voltar interactable">
+            <a href="index.html#visao__card">Voltar</a>
+        </div>
+        <div class="estagio">
+            <h2>Comportamento da resistência dinâmica, dividida em 5 estágios, durante a soldagem a ponto por resistência elétrica.</h2>
+            <div class="img">
+                <div class="imgbefore before"></div>
+                <img id="mainImg" src="/Imagens/comportamento-solda.png" alt="Gráfico sobre o comportamento da solda, Resistência x Tempo">
+                <div class="imgafter after"></div>
+            </div>
+            <div class="accordion">
+                <div class="card interactable" data-index="0" data-interval="30000">
+                    <h4>Estágio I</h4>
+                    <p>
+                        Este estágio compreende o começo da soldagem, após a aplicação da força pelos eletrodos. A magnitude da resistência elétrica inicial é elevada devido a presença de contaminantes superficiais nas peças. A geração de energia via calor nos primeiros ciclos de soldagem está concentrada na interface das chapas. Este fato faz com que haja a fragmentação dos contaminantes como óxidos, óleo, graxa, etc. Outro fenômeno importante que ocorre neste estágio é o colapso das rugosidades devido ao aumento da temperatura, resultando no aumento da área de contato. Portanto, em consequência destes fatos citados acima, neste estágio inicial da soldagem a resistência diminui.
+                    </p>
+                </div>
+                <div class="card interactable" data-index="1" data-interval="17000">
+                    <h4>Estágio II</h4>
+                    <p>Este estágio é caracterizado por dois efeitos conflitantes. O primeiro é a diminuição da resistência devido ao aumento da área de contato causado pelo colapso das rugosidades. O segundo é o aumento da resistência correspondente ao aumento da temperatura. A competição entre estes dois efeitos define o ponto <b>α</b>. 
+                    </p>
+                </div>
+                <div class="card interactable" data-index="2" data-interval="15000">
+                    <h4>Estágio III</h4>
+                    <p>Este estágio é definido pelo aumento da resistência elétrica devido ao aumento da temperatura. O ponto de inflexão da curva marca o início da fusão de micros contatos nas interfaces das chapas, assim como a transiçãopara o estágio IV.
+                    </p>
+                </div>
+                <div class="card interactable" data-index="3" data-interval="27000">
+                    <h4>Estágio IV</h4>
+                    <p>Este estágio é caracterizado por três mecanismos que diminuem e aumentam a resistência elétrica. Primeiro, a resistência continua aumentando devido ao aumento da temperatura. Segundo, com o aumento da área de fusão entre as chapas a resistência diminui. Terceiro, a resistência mecânica do material diminui com o aumento da temperatura, devido a este fato ocorre uma penetração dos eletrodos nas superfícies das chapas. Deste modo, a área de contato entre eletrodo/peça aumenta fazendo com que a resistência elétrica diminua, este fenômeno define o ponto <b>β</b> até o início do estágio V.
+                    </p>
+                </div>
+                <div class="card interactable" data-index="4" data-interval="15000">
+                    <h4>Estágio V</h4>
+                    <p>Neste estágio a resistência diminui devido ao crescimento do ponto de solda e também com o aumento da área de contato eletrodo/peça. Neste período final da formação do ponto de solda se a energia for muito alta pode ocorrer a expulsão de material.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="estagio__two">
+            <h2>Comportamento da resistência dinâmica em chapas revestidas com zinco, utilizando corrente alternada (linha azul) e corrente contínua (linha vermelha).</h2>
+            <div class="img">
+                <div class="img2before before"></div>
+                <img src="/Imagens/comportamento-solda-2.png" alt="">
+                <div class="img2after after"></div>
+            </div>
+            <p>Pode-se observar que existem dois pontos de máximo <b class="b1 interactable">(2)</b> e dois pontos de mínimo <b class="b2 interactable">(3)</b>, que ocorrem praticamente em tempos iguais. Isto mostra que ocorre primeiro a volatização da camada de Zn antes da fusão do aço, para um tempo de 17ms. A Figura ilustra a volatização do revestimento de Zn, representado nos estágios 2 e 3, mostrado no gráfico da resistência dinâmica.</p>
+
+            <p>Observa-se nesse desenho esquemático que o revestimento de Zn preenche toda a rugosidade do material. Este preenchimento nos vales e picos da rugosidade do material de base não permite uma deformação por completo da rugosidade. Após a volatização do Zn, os picos e vales da rugosidade do material de base se encontram e acontece o colapso das rugosidades. Este colapso aumenta a área de contato diminuindo a resistência dinâmica, como mostra o gráfico (estágios 2 e 3)</p>
+            <div class="img2 img">
+                <img src="/Imagens/comportamento-solda-3.png" alt="">
+                <p>Desenho esquemático da volatização do Zn: estágios 2 e 3 do gráfico da resistência dinâmica da Figura.</p>
+            </div>
+            <p>A evolução da formação do ponto de solda, através da resistência dinâmica, em chapas revestidas com zinco utilizando um equipamento de ultrassom de imagem. Este equipamento permite observar com detalhes e também medir o diâmetro da massa fundida do ponto de solda, a imagem é formada por uma matriz de 52 sensores. Ainda pela análise, mais especificamente no <b class="b3 interactable">estágio III</b>, a queda da resistência dinâmica mostra claramente que a volatização da camada de zinco é uma parte natural do processo de soldagem. Devido a este fato é importante ressaltar que com a eliminação da técnica da “queima” (volatização) da camada de zinco antes da soldagem, frequentemente utilizada na indústria automotiva, é possível produzir um ponto de solda com menor tempo e menor energia.</p>
+            <div class="img3 img">
+                <div class="img4before before"></div>
+                <img src="/Imagens/comportamento-solda-4.png" alt="">
+                <div class="img4after after"></div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="/scripts/mouse.js"></script>
+<script src="/scripts/accordion.js"></script>
+</html>

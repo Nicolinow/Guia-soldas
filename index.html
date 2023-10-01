@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="syle.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3c4906dfa6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -18,7 +18,7 @@
             <section class="header">
                 <div class="top__header">
                     <img src="" alt="">
-                    <h1>Tudo que precisa saber sobre solda por  resistência a ponto
+                    <h1>Tudo que precisa saber sobre solda por resistência a ponto
                         <i class="fa-solid fa-sort-down" style="color: #a0a0a09a;"></i>
                     </h1>
                 </div>
@@ -33,8 +33,8 @@
                     </ul>
                 </nav>
             </section> 
-            <div class="interactable resume">
-                <h2>Bem-vindo ao Mundo da <b>Solda por Resistência a Ponto</b></h2>
+            <div class="resume">
+                <h2>Bem-vindo ao Mundo da Solda por Resistência a Ponto</h2>
                 <p>Na junção entre ciência, precisão e força, a solda por resistência a ponto é uma técnica que moldou as indústrias e revolucionou a maneira como unimos metais. Se você está explorando esta página, é provável que já tenha algum conhecimento sobre a arte da solda. Mas, aqui, estamos prestes a mergulhar profundamente na solda por resistência a ponto, revelando seus segredos, aplicações e inovações. Imagine materiais se unindo com uma precisão milimétrica, resultando em conexões incrivelmente fortes e eficientes. Esta é a essência da solda por resistência a ponto. Não importa se você é um entusiasta, um profissional da indústria ou apenas alguém curioso sobre essa técnica de soldagem especializada; nosso site é o seu guia completo.</p>
             </div>
         </div>
@@ -56,10 +56,11 @@
     </header>
     <main>
         <section class="main__page">
+            <div id="visao__card"></div>
             <div class="visao__card">
                 <div class="visao__geral shadowcard">
                     <h3>Visão Geral do Processo</h3>
-                    <p>O processo de solda por resistência é aplicado quando se deseja unir dois ou mais metais. Consiste na aplicação de corrente elétrica através de eletrodos, que por sua vez exercem pressão sobre os materiais a serem soldados. Esses materiais comportam-se como resistências elétricas, que se somam as resistências dos materiais de base dos eletrodos. O processo recebe o nome de solda por resistência devido ao fato do calor ser gerado por consequência do aquecimento provocado pelas resistências envolvidas. Quando a corrente elétrica atravessa esse conjunto de resistências obtém-se calor, de acordo com a Lei de Joule: Q=i² x R x t. A quantidade de calor gerada, em Joules, é expressa por “Q”. A corrente elétrica, em Ampère, é expressa por “I”. A somatória das resistências envolvidas no processo, em Ohm, é expressa por “R” e o tempo de passagem de corrente, em segundos, é expresso por “T”.</p>
+                    <p>O processo de solda por resistência é aplicado quando se deseja unir dois ou mais metais. Consiste na aplicação de corrente elétrica através de eletrodos, que por sua vez exercem pressão sobre os materiais a serem soldados. Esses materiais comportam-se como resistências elétricas, que se somam as resistências dos materiais de base dos eletrodos. O processo recebe o nome de solda por resistência devido ao fato do calor ser gerado por consequência do aquecimento provocado pelas resistências envolvidas. Quando a corrente elétrica atravessa esse conjunto de resistências obtém-se calor, de acordo com a Lei de Joule: Q=i² x R x t. A quantidade de calor gerada, em Joules, é expressa por “Q”. A corrente elétrica, em Ampère, é expressa por “I”. A somatória das resistências envolvidas no processo, em Ohm, é expressa por “R” e o tempo de passagem de corrente, em segundos, é expresso por “T”. <a href="visao.html" class="see__more interactable" target="_blank"> Saiba mais ...</a></p>
                 </div>
             </div>
             <div class="diferencia">
@@ -148,8 +149,10 @@
                     </div>
                     <div class="card__section interactable">
                         <div class="Pcard">
+                            <div id="visao__card__two"></div>
                             <h4>Controle de Parâmetros</h4>
                             <p>A SRP requer um controle preciso de parâmetros, como corrente, tempo de soldagem, pressão e tamanho do eletrodo, para obter resultados consistentes. Outras técnicas também exigem controle preciso, mas os parâmetros específicos variam de acordo com o método.</p>
+                            <a href="parametros.html" class="see__more two interactable " target="_blank"> Saiba mais ...</a>
                         </div>
                         <div class="background"></div>
                         <div class="cards">
@@ -289,48 +292,86 @@
                         <div class="swiper-button-next interactable" style="cursor: none;"></div>
 
                     </div>
-                    <div class="aplicacao__conclusao"><p>Esses são apenas alguns exemplos das muitas aplicações da solda por resistência a ponto em várias indústrias. Sua capacidade de criar <u>conexões duráveis e consistentes</u> torna essa técnica essencial em uma ampla gama de produtos e setores.</p></div>
+                    <div class="aplicacao__conclusao">
+                        <p>Esses são apenas alguns exemplos das muitas aplicações da solda por resistência a ponto em várias indústrias. Sua capacidade de criar <u>conexões duráveis e consistentes</u> torna essa técnica essencial em uma ampla gama de produtos e setores.</p>
+                    </div>
                 </div>
             </div>
             <div class="materiais">
                 <h3>Materiais Adequados que podem ser soldados com essa técnica</h3>
-                <p>A solda por resistência a ponto (SRP) é uma técnica amplamente empregada na indústria para unir metais de forma eficaz e econômica. No entanto, a escolha dos materiais é um fator crítico para obter soldas de alta qualidade e desempenho. Vamos explorar os tipos de materiais mais adequados para a SRP e entender por que eles são escolhas confiáveis</p>
-                <div class="tipos__materiais">
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#00152b" class="metais interactable">
-                        <h4>Aços Carbono</h4>
-                        <p>Os aços carbono são os materiais mais comuns para a SRP, especialmente em aplicações industriais e automotivas.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#001e1e" class="metais interactable">
-                        <h4>Aços Inoxidáveis</h4>
-                        <p>Aços inoxidáveis, como 304 e 316, são usados em aplicações que exigem resistência à corrosão.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#291600" class="metais interactable">
-                        <h4>Aços de Baixa Liga</h4>
-                        <p>Aços de baixa liga, como o aço-liga HSLA, são usados em aplicações que requerem resistência mecânica superior.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#231b10a" class="metais interactable">
-                        <h4>Alumínio</h4>
-                        <p>O alumínio é soldado por resistência a ponto em aplicações como a fabricação de carrocerias de automóveis e componentes eletrônicos.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#1e1e00" class="metais interactable">
-                        <h4>Ligas de Alumínio</h4>
-                        <p>Ligas de alumínio, como a série 6000 e 7000, são usadas quando a resistência mecânica é importante.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor=" #1d140e" class="metais interactable">
-                        <h4>Cobre e Ligas de Cobre</h4>
-                        <p>O cobre é usado em aplicações elétricas e eletrônicas, onde a condutividade elétrica é crucial.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#180f23" class="metais interactable">
-                        <h4>Ligas de Titânio</h4>
-                        <p>Ligas de titânio são usadas em aplicações aeroespaciais e médicas devido à sua leveza e resistência à corrosão.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#2b0015" class="metais interactable">
-                        <h4>Níquel e Ligas de Níquel</h4>
-                        <p>O níquel e suas ligas são usados em aplicações de alta temperatura e resistência à corrosão.</p>
-                    </div>
-                    <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#2b1e00" class="metais interactable">
-                        <h4>Ligas Especiais</h4>
-                        <p>Dependendo das necessidades da aplicação, outras ligas especiais, como ligas de magnésio, berílio e tungstênio, podem ser usadas.</p>
+                <p>A solda por resistência a ponto (SRP) é uma técnica amplamente empregada na indústria para unir metais de forma eficaz e econômica. No entanto, <u>a escolha dos materiais é um fator crítico para obter soldas de alta qualidade e desempenho.</u> Vamos explorar os tipos de materiais mais adequados para a SRP e entender por que eles são escolhas confiáveis.</p>
+                <input class="input1" type="checkbox" id="checkbox_id">
+                <label for="checkbox_id" class="see__more three interactable button">Saiba mais ...</label>
+                <div class="pre__pre__tipos__materiais">
+                    <div class="pre__tipos__materiais">
+                        <div class="tipos__materiais">
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#00152b" class="metais interactable">
+                                    <h4>Aços Carbono</h4>
+                                    <p>Os aços carbono são os materiais mais comuns para a SRP, especialmente em aplicações industriais e automotivas.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#001e1e" class="metais interactable">
+                                    <h4>Aços Inoxidáveis</h4>
+                                    <p>Aços inoxidáveis, como 304 e 316, são usados em aplicações que exigem resistência à corrosão.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#291600" class="metais interactable">
+                                    <h4>Aços de Baixa Liga</h4>
+                                    <p>Aços de baixa liga, como o aço-liga HSLA, são usados em aplicações que requerem resistência mecânica superior.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#231b10a" class="metais interactable">
+                                    <h4>Alumínio</h4>
+                                    <p>O alumínio é soldado por resistência a ponto em aplicações como a fabricação de carrocerias de automóveis e componentes eletrônicos.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#1e1e00" class="metais interactable">
+                                    <h4>Ligas de Alumínio</h4>
+                                    <p>Ligas de alumínio, como a série 6000 e 7000, são usadas quando a resistência mecânica é importante.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor=" #1d140e" class="metais interactable">
+                                    <h4>Cobre e Ligas de Cobre</h4>
+                                    <p>O cobre é usado em aplicações elétricas e eletrônicas, onde a condutividade elétrica é crucial.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#180f23" class="metais interactable">
+                                    <h4>Ligas de Titânio</h4>
+                                    <p>Ligas de titânio são usadas em aplicações aeroespaciais e médicas devido à sua leveza e resistência à corrosão.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#2b0015" class="metais interactable">
+                                    <h4>Níquel e Ligas de Níquel</h4>
+                                    <p>O níquel e suas ligas são usados em aplicações de alta temperatura e resistência à corrosão.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#2b1e00" class="metais interactable">
+                                <h4>Ligas Especiais</h4>
+                                <p>Dependendo das necessidades da aplicação, outras ligas especiais, como ligas de magnésio, berílio e tungstênio, podem ser usadas.</p>
+                            </div>
+                        </div>
+                        <div class="tipos__materiai__two">
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#00152b" class="metais interactable">
+                                <h4>Aço carbono</h4>
+                                <p>É o material mais comum utilizado na soldagem por resistência a ponto, especialmente em aplicações industriais, devido à sua resistência e versatilidade. Ele pode ser encontrado em uma variedade de aplicações, desde estruturas de construção até peças automotivas. A soldagem por resistência a ponto é freqüentemente usada na fabricação de carrocerias de automóveis.</p>
+                            </div>                
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#001e1e" class="metais interactable">
+                                <h4>Aço inoxidável</h4>
+                                <p>Incluindo diferentes tipos de aços inoxidáveis, como 304 e 316, que são frequentemente usados em aplicações que requerem resistência à corrosão como na produção de utensílios de cozinha, equipamentos médicos e componentes para indústrias químicas e de alimentos.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#291600" class="metais interactable">
+                                <h4>Alumínio</h4>
+                                <p>O alumínio é frequentemente usado em indústrias como a automotiva e a aeroespacial, onde a leveza do material é uma consideração importante. A soldagem por resistência a ponto é uma técnica comum para unir peças de alumínio em aplicações como carrocerias de veículos e estruturas aeroespaciais.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#231b10" class="metais interactable">
+                                <h4>Cobre</h4>
+                                <p>O cobre é usado em aplicações elétricas e eletrônicas devido à sua excelente condutividade elétrica. É amplamente usado em aplicações elétricas e eletrônicas, como cabos elétricos, componentes eletrônicos e sistemas de distribuição de energia.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#1e1e00" class="metais interactable">
+                                <h4>Ligas de metais especiais</h4>
+                                <p>Dependendo das propriedades específicas necessárias para uma aplicação, podem ser soldadas ligas de níquel, titânio, latão e outras ligas metálicas especiais. São usadas em aplicações específicas devido às suas propriedades únicas. Por exemplo, o titânio é valorizado por sua resistência à corrosão e é usado em aplicações aeroespaciais e médicas.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#0e0e0e" class="metais interactable">
+                                <h4>Aço galvanizado</h4>
+                                <p>O aço galvanizado é revestido com uma camada de zinco para proteção contra corrosão. Ele pode ser soldado por resistência a ponto, mas é importante controlar adequadamente o processo para evitar danos ao revestimento de zinco. A soldagem por resistência a ponto de aço galvanizado requer atenção especial para evitar danos ao revestimento de zinco, pois o zinco pode vaporizar durante o processo de soldagem.</p>
+                            </div>
+                            <div onmouseover="hoverCard(this)" onmouseout="unhoverCard()" data-bgcolor="#1a1a1a" class="metais interactable">
+                                <h4>Ligas de alta resistência</h4>
+                                <p>Materiais como aços de alta resistência, usados na indústria automotiva, podem ser soldados por resistência a ponto, mas exigem parâmetros de soldagem específicos devido às suas propriedades mecânicas. Essas ligas podem exigir configurações de soldagem específicas devido à sua maior resistência.</p>
+                            </div>                           
+                        </div>
                     </div>
                 </div>
                 <div class="materiais__conclusao">
@@ -386,6 +427,7 @@
             <div class="dicas">
                 <h3>Dicas e Truques</h3>
                 <p>A soldagem por resistência a ponto (SRP) requer habilidades específicas e o ajuste preciso de parâmetros para obter soldas de alta qualidade e consistência. Aqui estão algumas dicas e truques que representam as melhores práticas e podem ajudar a aprimorar suas habilidades de soldagem por resistência a ponto.</p>
+                <a target="_blank" href="comportamento.html" class="see__more four interactable">Identificar e eliminar os defeitos em soldagem por resistência.</a>
                 <div class="truques">
                     <div class="det interactable">
                         <h4>Conheça seus Materiais</h4>
@@ -429,8 +471,7 @@
                 </div>
             </div>
             <div class="tipos__maquinas">
-                <h3>Tipos de máquinas para solda por resistência a ponto
-                </h3>
+                <h3>Tipos de máquinas para solda por resistência a ponto</h3>
                 <p>Existem vários tipos de máquinas utilizadas na solda por resistência a ponto (SRP), cada uma projetada para atender a diferentes necessidades e aplicações. Aqui estão alguns dos tipos mais comuns:</p>
                 <div class="tipos__solda">
                     <div class="solda interactable">
@@ -484,6 +525,27 @@
                 </div>
                 <div class="tipos__conclusao">
                     <p>A escolha do tipo de máquina de SRP <u>depende das necessidades específicas da aplicação</u>, do volume de produção, da precisão exigida e do tamanho das peças a serem soldadas. Máquinas de SRP são amplamente utilizadas na indústria devido à sua <u>eficiência e capacidade de produzir conexões de alta qualidade em uma variedade de materiais e espessuras</u>.</p>
+                </div>
+                <input class="input2" type="checkbox" id="checkbox_id_two">
+                <label for="checkbox_id_two" class="see__more five interactable buttontwo">Fabricantes</label>
+                <div class="maquinas__links">
+                    <ul>
+                        <li><a class="interactable" target="_blank" href="http://presol.com.br">Presol</a></li>
+                        <li class="out"></li>
+                        <li><a class="interactable" target="_blank" href="https://www.fusionpoint.com.br/">Fusion Point</a></li>
+                        <li class="out"></li>
+                        <li><a class="interactable" target="_blank" href="https://www.sukha.ind.br/blog/tag/solda-por-resistencia">Sukha</a></li>
+                        <li class="out"></li>
+                        <li><a class="interactable" target="_blank" href="https://isotron.com.br/categoria/maquinas-industriais/?gclid=CjwKCAjwsKqoBhBPEiwALrrqiB6kJEC3_NIDOFEz1SOUQJSw05a2GqPvPzrm5fdx9EeXJRrOPmL0mhoCnL0QAvD_BwE">Isotron</a></li>
+                        <li class="out"></li>
+                        <li><a class="interactable" target="_blank" href="https://www.arotechnologies.com/pt-PT">ARO technologies</a></li>
+                        <li class="out"></li>
+                        <li><a class="interactable" target="_blank" href="https://bamsoldas.com.br/">Bam soldas</a></li>
+                        <li class="out"></li>
+                        <li><a class="interactable" target="_blank" href="https://duringdobrasil.com.br/quem-somos/">During do Brasil</a></li>
+                        <li class="out"></li>
+                        <li><a class="interactable" target="_blank" href="https://isotron.com.br/maquina-de-solda-ponto-por-resistencia-de-media-frequencia-potencia-180-kva/">Isotron</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="outras__maquinas">
@@ -563,9 +625,9 @@
         </footer>
     </main>
 </body>
-<script src="focus.js"></script>
-<script src="script.js"></script>
-<script src="mouse.js"></script>
-<script src="swiper.js"></script>
+<script src="/scripts/focus.js"></script>
+<script src="/scripts/mouse.js"></script>
+<script src="/scripts/script.js"></script>
+<script src="/scripts/swiper.js"></script>
 
 </html>

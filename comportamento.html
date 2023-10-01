@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylecomportamento.css">
+</head>
+<body>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <div class="voltar interactable">
+            <a href="index.html#visao__card__two">Voltar</a>
+        </div>
+        <div class="problemas">
+            <h2>Como identificar e eliminar os defeitos em soldagem por resistência?</h2>
+            <p>Abaixo está uma lista com alguns resultados de processos de soldagem por resistência que podem ser considerados defeitos de solda.</p>
+            <ul>
+                <li class="interactable">Solda Fraca</li>
+                <li class="interactable">Trinca e Poros</li>
+                <li class="interactable">Indentação excessiva</li>
+                <li class="interactable">Expulsão de material e queima da superfície</li>
+                <li class="interactable">Inconsistência na qualidade dos pontos de solda</li>
+            </ul>
+            <p>Além destes, existem ainda, mais de 10 defeitos possíveis de identificar e corrigir. </p>
+        </div>
+        <div class="defeitos">
+            <h2>Como identificar as possíveis causas destes defeitos?</h2>
+            <p>Durante cada etapa do processo de soldagem, é possível avaliar o desempenho tanto das peças, quanto das máquinas e identificar quando algo não sai como o esperado. 
+            Assim que identificada qualquer variação indesejável no resultado, é necessário fazer uma análise para entender qual foi sua causa específica. 
+            <u>Deve-se dedicar uma atenção especial à etapa de parametrização das máquinas de solda por resistência</u>, pois simples alterações nos parâmetros são capazes de produzir resultados completamente diferentes, com grande impacto na qualidade e custo destes processos. 
+            <u>Outro fator que colabora para o desempenho</u>, bom ou ruim, de um processo de soldagem por resistência <b>é a qualidade da matéria prima utilizada nas peças</b>.  
+            Quando optar por utilizar determinado material para um processo, é necessário entender quais resultados as variações dos parâmetros podem gerar e ter os devidos cuidados
+            </p>
+        </div>
+        <div class="qualificando">
+            <h2>Qualificando as possíveis causas de um defeito</h2>
+            <p>O processo de identificação e correção de um defeito de soldagem pode ser feito de trás para frente, iniciando-se a partir da qualificação do defeito. 
+            Como foi dito inicialmente neste post, existem diversos tipos de defeitos de soldagem, porém, a qualificação de suas causas pode ser feita com base em três níveis: 
+            </p>
+            <ul class="ul1">
+                <li><a class="interactable" href="#fortes">Fortes Possibilidades</a></li>
+                <li><a class="interactable" href="#fracas">Fracas Possibilidades</a></li>
+                <li><a class="interactable" href="#outras">Outras Possibilidades</a></li>
+            </ul>
+            <p>Os defeitos de soldagem, por si só, já anunciam os sinais de suas causas, o que resta é conseguir percebê-los. </p>
+            <img src="/Imagens/comportamento-solda-7.png" alt="">
+            <p>Como exemplo, veja o que pode ser feito em casos de encontrar um <b>ponto de solda extra</b> em seus processos de soldagem. </p>
+            <p>Uma das consequências de pontos de solda extra é a fuga de corrente quando for ser soldado o próximo ponto. <u>Isso porque existe uma distância mínima entre os pontos de solda</u> para que esta derivação de corrente não ocorra pelo ponto anterior, resultando em diminuição do ponto de solda que está sendo soldado. Isso ainda aumenta o custo de soldagem, pois um ponto de solda adicional foi realizado. </p>
+            <p>Ao perceber que há um ponto de solta extra, pode-se considerar as seguintes possibilidades como causas: </p>
+            <div class="possibilidades">
+                <ul class="ul2" id="fortes">    
+                    <h4>Fortes Possibilidades</h4>
+                    <li class="interactable">Seleção incorreta da peça de trabalho</li>
+                    <li class="interactable">Soldas impropriamente localizadas através de instalação /robô / operador</li>
+                    <li class="interactable">Difícil acesso para realizar a operação de soldagem</li>
+                    <li class="interactable">Falta de treinamento operacional</li>
+                </ul>
+                <ul class="ul2" id="fracas">
+                    <h4>Fracas Possibilidades</h4>
+                    <li class="interactable">Procedimento de teste incorreto</li>
+                </ul>
+                <ul class="ul2" id="outras">
+                    <h4>Outras Possibilidades</h4>
+                    <li class="interactable">Incorreta revisão do desenho da peça.  </li>
+                </ul>
+            </div>
+            <p>Após análise do defeito existente e verificação de compatibilidade com as possibilidades das causas será possível identificar a real causa do defeito, e dessa forma corrigi-lo.   </p>
+        </div>
+    </main>
+    
+</body>
+<script src="scripts/mouse.js"></script>
+</html>

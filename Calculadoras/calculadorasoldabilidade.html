@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Soldabilidade</title>
+</head>
+<body>
+    <h1>Calculadora de Soldabilidade</h1>
+    
+    <label for="carbono">Teor de Carbono (%): </label>
+    <input type="number" id="carbono" step="0.01">
+    <br><br>
+    
+    <label for="manganese">Teor de Manganês (%): </label>
+    <input type="number" id="manganese" step="0.01">
+    <br><br>
+
+    <label for="cromo">Teor de Cromo (%): </label>
+    <input type="number" id="cromo" step="0.01">
+    <br><br>
+
+    <label for="molibdenio">Teor de Molibdênio (%): </label>
+    <input type="number" id="molibdenio" step="0.01">
+    <br><br>
+
+    <label for="vanadio">Teor de Vanádio (%): </label>
+    <input type="number" id="vanadio" step="0.01">
+    <br><br>
+
+    <label for="niquel">Teor de Níquel (%): </label>
+    <input type="number" id="niquel" step="0.01">
+    <br><br>
+
+    <label for="cobre">Teor de Cobre (%): </label>
+    <input type="number" id="cobre" step="0.01">
+    <br><br>
+    
+    <button onclick="calcularCarbonoEquivalente()">Calcular Carbono Equivalente</button>
+    <br><br>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularCarbonoEquivalente() {
+            const teorCarbono = parseFloat(document.getElementById("carbono").value);
+            const teorManganese = parseFloat(document.getElementById("manganese").value);
+            const teorCromo = parseFloat(document.getElementById("cromo").value);
+            const teorMolibdenio = parseFloat(document.getElementById("molibdenio").value);
+            const teorVanadio = parseFloat(document.getElementById("vanadio").value);
+            const teorNiquel = parseFloat(document.getElementById("niquel").value);
+            const teorCobre = parseFloat(document.getElementById("cobre").value);
+
+            if (isNaN(teorCarbono) || isNaN(teorManganese) || isNaN(teorCromo) || isNaN(teorMolibdenio) || isNaN(teorVanadio) || isNaN(teorNiquel) || isNaN(teorCobre)) {
+                alert("Por favor, insira valores válidos para os teores.");
+                return;
+            }
+
+            const carbonoEquivalente = teorCarbono + (teorManganese / 6) + ((teorCromo + teorMolibdenio + teorVanadio) / 5) + ((teorNiquel + teorCobre) / 15);
+
+            let resultado = "Carbono Equivalente: " + carbonoEquivalente.toFixed(2) + "<br>";
+
+            if (carbonoEquivalente < 0.22) {
+                resultado += "Material Altamente Soldável";
+            } else if (carbonoEquivalente >= 0.22 && carbonoEquivalente <= 0.40) {
+                resultado += "Material Moderadamente Soldável";
+            } else {
+                resultado += "Material Dificilmente Soldável";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
+

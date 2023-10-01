@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Solda por Resistência a Ponto</title>
+</head>
+<body>
+    <h1>Calculadora de Solda por Resistência a Ponto</h1>
+    <h2>Quantidade de Calor Gerada</h2>
+    <form id="weldingCalculator">
+        <label for="current">Corrente Elétrica (A):</label>
+        <input type="number" id="current" required><br>
+
+        <label for="resistance">Resistência Total (Ohms):</label>
+        <input type="number" id="resistance" required><br>
+
+        <label for="time">Tempo de Soldagem (s):</label>
+        <input type="number" id="time" required><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("weldingCalculator").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obter os valores de entrada
+            const current = parseFloat(document.getElementById("current").value);
+            const resistance = parseFloat(document.getElementById("resistance").value);
+            const time = parseFloat(document.getElementById("time").value);
+
+            // Calcular a quantidade de calor gerada (Q) usando a Lei de Joule
+            const heatGenerated = calcularQuantidadeDeCalor(current, resistance, time);
+
+            // Exibir o resultado
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<p>Quantidade de Calor Gerada (Q): ${heatGenerated.toFixed(2)} Joules</p>`;
+        });
+
+        function calcularQuantidadeDeCalor(current, resistance, time) {
+            // Utilizar a fórmula Q = I² * R * t para calcular a quantidade de calor
+            const heatGenerated = Math.pow(current, 2) * resistance * time;
+            return heatGenerated;
+        }
+    </script>
+</body>
+</html>

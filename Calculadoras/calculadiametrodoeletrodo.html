@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Diâmetro do Eletrodo</title>
+</head>
+<body>
+    <h1>Calculadora de Diâmetro do Eletrodo</h1>
+    <form id="electrodeCalculator">
+        <label for="thickness1">Espessura da Chapa 1 (mm):</label>
+        <input type="number" id="thickness1" required><br>
+
+        <label for="thickness2">Espessura da Chapa 2 (mm):</label>
+        <input type="number" id="thickness2" required><br>
+
+        <label for="thickness3">Espessura da Chapa 3 (mm):</label>
+        <input type="number" id="thickness3" required><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    <h2>Resultado:</h2>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("electrodeCalculator").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obter as espessuras das três chapas inseridas pelo usuário
+            const thickness1 = parseFloat(document.getElementById("thickness1").value);
+            const thickness2 = parseFloat(document.getElementById("thickness2").value);
+            const thickness3 = parseFloat(document.getElementById("thickness3").value);
+
+            // Calcular o diâmetro do eletrodo usando a fórmula 𝐷 = 5√(𝑡1 + 𝑡2 + 𝑡3)
+            const electrodeDiameter = calcularDiametroDoEletrodo(thickness1, thickness2, thickness3);
+
+            // Exibir o resultado
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<p>Diâmetro do Eletrodo (D): ${electrodeDiameter.toFixed(2)} mm</p>`;
+        });
+
+        function calcularDiametroDoEletrodo(thickness1, thickness2, thickness3) {
+            // Utilizar a fórmula D = 5√(𝑡1 + 𝑡2 + 𝑡3) para calcular o diâmetro do eletrodo
+            const electrodeDiameter = 5 * Math.sqrt(thickness1 + thickness2 + thickness3);
+            return electrodeDiameter;
+        }
+    </script>
+</body>
+</html>
