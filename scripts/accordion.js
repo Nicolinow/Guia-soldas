@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   
-    // Função para atualizar a posição de .imgbefore e .imgafter com base no índice
     function updateImagePosition(index) {
         if (index === 0) {
           imgBefore.style.left = "29.9%";
@@ -61,44 +60,35 @@ document.addEventListener("DOMContentLoaded", function () {
         imgAfter.style.width = "9.7%";
         }
     }
-      // Adicione mais casos conforme necessário para outros cards
 
-  
     function animateCard() {
       const currentTime = performance.now();
       const elapsedTime = currentTime - startTime;
   
-      // Obtenha o valor do atributo data-interval do card atual
       const currentCard = cards[currentIndex];
       const interval = parseInt(currentCard.getAttribute("data-interval")) || 15000;
   
-      // Atualize o card ativo com base no índice atual
       setActiveCard(currentIndex);
-      
-      // Atualize a posição das imagens com base no índice atual
       updateImagePosition(currentIndex);
   
       if (elapsedTime >= interval) {
-        // Avance para o próximo card
         currentIndex = (currentIndex + 1) % cards.length;
         startTime = currentTime;
       }
   
-      animationId = requestAnimationFrame(animateCard); // Continue a animação
+      animationId = requestAnimationFrame(animateCard); 
     }
-  
-    // Adicione um ouvinte de evento de clique a cada card
+
     cards.forEach((card, index) => {
       card.addEventListener("click", () => {
-        // Pare o loop de animação quando um card é clicado
+
         cancelAnimationFrame(animationId);
-        currentIndex = index; // Defina o índice para o card clicado
-        startTime = performance.now(); // Atualize o tempo inicial
-        animateCard(); // Inicie a próxima animação
+        currentIndex = index; 
+        startTime = performance.now(); 
+        animateCard(); 
       });
     });
-  
-    // Inicie a animação dos cards
+
     animateCard();
 
     mainImg.addEventListener("mouseenter", () => {
@@ -106,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
         imgAfter.style.opacity = 0;
       });
     
-      // Adicione um ouvinte de evento de saída do mouse da imagem principal
       mainImg.addEventListener("mouseleave", () => {
         imgBefore.style.opacity = 1;
         imgAfter.style.opacity = 1;
