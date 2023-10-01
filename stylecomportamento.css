@@ -66,10 +66,9 @@ body{
     border: 0;
     padding: 0;
     margin: 0;
-    color: var(--default-color);
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-    color: var(--default-color);
+    color: #ffffff;
     background: linear-gradient(60deg, #040213, #000c18, #040213, #000c18, #040213, #000c18, #040213, #000c18, #040213);
     background-size: 15px 15px ;
     animation: fundo2 200s linear;
@@ -131,13 +130,14 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 70px;
 }
 h2{
     color: #ffc300;
     text-shadow:  6px 5px #003566;
     text-align: center;
     font-size: 3rem;
+    margin-bottom: 71px;
 }
 p{
     margin-inline: auto;
@@ -154,7 +154,7 @@ p{
 }
 .problemas h2{
     width: 90%;
-    font-size: 4rem;
+    font-size: 3.3rem;
 }
 .problemas p{
     margin-top: -1%;
@@ -256,7 +256,6 @@ img{
 }
 .possibilidades{
     position: relative;
-    overflow: hidden;
     display: flex;
     width: 90%;
     padding-bottom: 20px;
@@ -277,7 +276,13 @@ img{
         background-position: 0% 0%;
         background-size: var(--s) var(--s), calc(var(--s)/2) calc(var(--s)/2);
     }
+    25%{
+        background-size: var(--s) var(--s), calc(var(--s)/3) calc(var(--s)/3);
+    }
     50%{
+        background-size: var(--s) var(--s), calc(var(--s)/4) calc(var(--s)/4);
+    }
+    75%{
         background-size: var(--s) var(--s), calc(var(--s)/3) calc(var(--s)/3);
     }
     100%{
@@ -296,7 +301,6 @@ img{
 }
 .possibilidades .ul2{
     display: flex;
-    list-style: dot;
     flex-direction: column;
     justify-content: start;
     gap: 20px;

@@ -360,7 +360,21 @@ main{
     position: absolute;    
     top: -200px;
 }
-
+#dicas{
+    visibility: hidden;
+    position: absolute;    
+    top: -200px;
+}
+#outras{
+    visibility: hidden;
+    position: absolute;    
+    top: -200px;
+}
+#tipos__maquinas{
+    visibility: hidden;
+    position: absolute;    
+    top: -200px;
+}
 .visao__card{
     position: relative;
     margin-top: 6%;
@@ -774,14 +788,16 @@ h3{
     text-align: center;
 }
 .input1,
-.input2{
+.input2,
+.input3{
     position: absolute;
     visibility: hidden;
     user-select: none;
     pointer-events: none;
 }
 .button,
-.buttontwo{
+.buttontwo,
+.buttonthree{
     user-select: none;
     cursor: none;
 }
@@ -1013,6 +1029,7 @@ h3{
     transition: 0.5s all 0.3s;
 }
 .dicas{
+    position: relative;
     margin-top: 1%;
     display: flex;
     flex-direction: column;
@@ -1285,7 +1302,26 @@ h3{
     font-size: 1.2rem;
     margin-bottom: 3%;
 }
+.input3:checked + label + div + div{
+    margin-top: 5.5rem;
+}
+.input3:checked + label + div > p{
+    transform: translateY(100px);
+    opacity: 1;
+    transition: all 0.5s, 0.2s opacity 0.1s;
+}
+.outras__pre__link{
+    margin-top: 11rem;
+    position: absolute;
+}
+.outras__pre__link p{
+    margin-inline: auto;
+    opacity: 0;
+    transition: all 0.5s, 0.2s opacity;
+    width: 75%;
+}
 .tipos__outras{
+    transition: 0.5s margin;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1428,6 +1464,7 @@ footer {
     padding-inline: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    font-size: 1.2rem;
 }
 .see__more.active{
     pointer-events: all;
@@ -1491,8 +1528,6 @@ footer {
     position: relative;
 }
 .see__more.three.active{
-    margin-top: 10px;
-    margin-left: 0;
     cursor: none;
 }
 .see__more.three::after{
@@ -1500,7 +1535,6 @@ footer {
 }
 .see__more.four{
     margin-top: 10px;
-    font-size: 1.2rem;
 }
 .see__more.four::after{
     border-radius: 5px;
@@ -1513,4 +1547,24 @@ footer {
 .see__more.five::after{
     border-radius: 5px;
 }
-
+.see__more.six{
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+.see__more.six::after{
+    border-radius: 5px;
+}
+.see__more.out{
+    pointer-events: all;
+    color: var(--accent-color-two);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), 0.3s margin 0.5s;	
+}
+.see__more.out:hover{
+    margin-left: 1px;
+    margin-right: 5px;
+    color: var(--accent-color);
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), margin 0.3s;	
+}
+.see__more.out::after{
+    border-radius: 5px;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solda de Resistência a Ponto</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3c4906dfa6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
@@ -13,7 +13,7 @@
 <body>
     <div id='cursor' class="mouse"></div>
     <div id='pointer'></div>
-    <header class="start__page">
+    <header class="start__page" id="inicio">
         <div class="backdrop__filter">
             <section class="header">
                 <div class="top__header">
@@ -24,10 +24,10 @@
                 </div>
                 <nav>
                     <ul>
-                        <li class="interactable"><a href="">Página inicial</a></li>
+                        <li class="interactable"><a href="#inicio">Página inicial</a></li>
                         <li class="interactable"><a href="">Tipos de Solda</a></li>
-                        <li class="interactable"><a href="">Tipos de Máquinas</a></li>
-                        <li class="interactable"><a href="">Parâmetros de Soldagem</a></li>
+                        <li class="interactable"><a href="#tipos__maquinas">Tipos de Máquinas</a></li>
+                        <li class="interactable"><a target="_blank" href="parametros.html">Parâmetros de Soldagem</a></li>
                         <li class="interactable"><a href="">Calculadoras de Solda Por Resistência</a></li>
                         <li class="interactable"><a href="">Cursos</a></li>
                     </ul>
@@ -44,10 +44,10 @@
             <i class="fa-solid fa-sort-down" style="color: #a0a0a0d3;"></i>
             <nav>
                 <ul>
-                    <li class="interactable"><a href="">Página inicial</a></li>
+                    <li class="interactable"><a href="#inicio">Página inicial</a></li>
                     <li class="interactable"><a href="">Tipos de Solda</a></li>
-                    <li class="interactable"><a href="">Tipos de Máquinas</a></li>
-                    <li class="interactable"><a href="">Parâmetros de Soldagem</a></li>
+                    <li class="interactable"><a href="#tipos__maquinas">Tipos de Máquinas</a></li>
+                    <li class="interactable"><a target="_blank" href="parametros.html">Parâmetros de Soldagem</a></li>
                     <li class="interactable"><a href="">Calculadoras de Solda Por Resistência</a></li>
                     <li class="interactable"><a href="">Cursos</a></li>
                 </ul>
@@ -425,6 +425,7 @@
                 </div>
             </div>
             <div class="dicas">
+                <div id="dicas"></div>
                 <h3>Dicas e Truques</h3>
                 <p>A soldagem por resistência a ponto (SRP) requer habilidades específicas e o ajuste preciso de parâmetros para obter soldas de alta qualidade e consistência. Aqui estão algumas dicas e truques que representam as melhores práticas e podem ajudar a aprimorar suas habilidades de soldagem por resistência a ponto.</p>
                 <a target="_blank" href="comportamento.html" class="see__more four interactable">Identificar e eliminar os defeitos em soldagem por resistência.</a>
@@ -471,6 +472,7 @@
                 </div>
             </div>
             <div class="tipos__maquinas">
+                <div id="tipos__maquinas"></div>
                 <h3>Tipos de máquinas para solda por resistência a ponto</h3>
                 <p>Existem vários tipos de máquinas utilizadas na solda por resistência a ponto (SRP), cada uma projetada para atender a diferentes necessidades e aplicações. Aqui estão alguns dos tipos mais comuns:</p>
                 <div class="tipos__solda">
@@ -527,7 +529,7 @@
                     <p>A escolha do tipo de máquina de SRP <u>depende das necessidades específicas da aplicação</u>, do volume de produção, da precisão exigida e do tamanho das peças a serem soldadas. Máquinas de SRP são amplamente utilizadas na indústria devido à sua <u>eficiência e capacidade de produzir conexões de alta qualidade em uma variedade de materiais e espessuras</u>.</p>
                 </div>
                 <input class="input2" type="checkbox" id="checkbox_id_two">
-                <label for="checkbox_id_two" class="see__more five interactable buttontwo">Fabricantes</label>
+                <label for="checkbox_id_two" class="see__more five interactable buttontwo">Fabricantes ...</label>
                 <div class="maquinas__links">
                     <ul>
                         <li><a class="interactable" target="_blank" href="http://presol.com.br">Presol</a></li>
@@ -548,9 +550,15 @@
                     </ul>
                 </div>
             </div>
+            <div id="outras"></div>
             <div class="outras__maquinas">
                 <h3>Outros Tipos de máquinas para solda por resistência</h3>
                 <p>Além dos tipos de máquinas para solda por resistência a ponto existem algumas outras variações e especificações de máquinas de solda por resistência que atendem a necessidades específicas. Estes incluem:</p>
+                <input class="input3" type="checkbox" id="checkbox_id_three">
+                <label for="checkbox_id_three" class="see__more six interactable buttonthree">Saiba mais ...</label>
+                <div class="outras__pre__link">
+                    <p>A escolha correta de uma máquina de solda por resistência a ponto envolve diversos fatores importantes que afetam a qualidade da solda e a eficiência do processo.<a href="escolha.html" class="see__more out interactable" target="_blank"> Aqui estão</a>algumas etapas a serem seguidas para ajudá-lo a fazer a escolha adequada</p>
+                </div>
                 <div class="tipos__outras">
                     <div class="HOVER interactable">
                         <span></span>

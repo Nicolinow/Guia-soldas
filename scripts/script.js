@@ -10,6 +10,7 @@ window.addEventListener('scroll', () => {
     const seemorethree = document.querySelector('.see__more.three')
     const seemorefour = document.querySelector('.see__more.four')
     const seemorefive = document.querySelector('.see__more.five')
+    const seemoresix = document.querySelector('.see__more.six')
 
     const shrinkPoint1 = 900; 
     const shrinkPoint2 = 550;
@@ -18,7 +19,9 @@ window.addEventListener('scroll', () => {
     const shrinkPoint35 = 1950
     const shrinkPoint4 = 3500;
     const shrinkPoint45 = 4000;
-    const shrinkPoint5 = 10300;
+    const shrinkPoint5 = 6300;
+    const shrinkPoint6 = 10300;
+    const shrinkPoint7 = 10700;
     const shrinkPoints = [6450, 6750, 7050, 7300, 7500, 7750, 8050, 8350, 8550];
     const elements = document.querySelectorAll('[class^="det"]');
     const customClass = 'custom';
@@ -64,33 +67,33 @@ window.addEventListener('scroll', () => {
     window.addEventListener('scroll', updateCustomClass);
     
     if (scrollY > shrinkPoint1){
-        floatingHeader.classList.add('active');
+      floatingHeader.classList.add('active');
     } else {
-        floatingHeader.classList.remove('active');
+      floatingHeader.classList.remove('active');
     }
     if (scrollY > shrinkPoint2){
-        shadowcard.classList.add('active');
+      shadowcard.classList.add('active');
     } else {
-        shadowcard.classList.remove('active');
+      shadowcard.classList.remove('active');
     }
     if (scrollY > shrinkPoint25){
-        seemore.classList.add('active')
+      seemore.classList.add('active')
     } else {
-        seemore.classList.remove('active')
+      seemore.classList.remove('active')
     }
     if (scrollY > shrinkPoint3){
-        body.classList.add('active')
-        floatingHeader.classList.add('active1');
+      body.classList.add('active')
+      floatingHeader.classList.add('active1');
     } else {
-        body.classList.remove('active')
-        floatingHeader.classList.remove('active1');
+      body.classList.remove('active')
+      floatingHeader.classList.remove('active1');
     }
     if (scrollY > shrinkPoint4){
-        mouse.classList.add('active')
-        mouse2.classList.add('active')
+      mouse.classList.add('active')
+      mouse2.classList.add('active')
     } else{
-        mouse.classList.remove('active')
-        mouse2.classList.remove('active')
+      mouse.classList.remove('active')
+      mouse2.classList.remove('active')
     }
     if (scrollY > shrinkPoint35){
       seemoretwo.classList.add('active')
@@ -99,19 +102,25 @@ window.addEventListener('scroll', () => {
     }
     if (scrollY > shrinkPoint45){
       seemorethree.classList.add('active')
-    }else {
+    } else {
       seemorethree.classList.remove('active')
     }
     if (scrollY > shrinkPoint5){
       seemorefour.classList.add('active')
-    }else {
+    } else {
       seemorefour.classList.remove('active')
     }
-    if (scrollY > shrinkPoint5){
+    if (scrollY > shrinkPoint6){
       seemorefive.classList.add('active')
-    }else {
+    } else {
       seemorefive.classList.remove('active')
     }
+    if (scrollY > shrinkPoint7){
+      seemoresix.classList.add('active')
+    } else {
+      seemoresix.classList.remove('active')
+    }
+
 });
 function hoverCard(card) {
     const bgColor = card.getAttribute('data-bgcolor');

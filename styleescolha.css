@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --default-color:#dbdbdb;
+    --title-color:#ffc300;
+    --title-shadow:#003566;
+    --background-dark:#040213; 
+    --background-light:#e5e7ffa1;
+    --accent-color: #00498d;
+    --accent-color-two: #0065c4;
+}
+#cursor {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    border: 2px solid #89a7e780;
+    transition: opacity 0.2s ease, background-color 0.2s ease, border 0.6s;
+}
+#pointer{
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    background-color: #8c7af1;
+    transition: opacity 0.2s ease, background-color 0.6s;
+}
+::-webkit-scrollbar{
+    width: 7px;
+    background: var(--background-dark)
+}
+::-webkit-scrollbar-button{
+    display: none;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--title-shadow);
+    border-radius: 10px;
+}
+body:hover > #cursor {
+    opacity: 1;
+}
+body:hover > #pointer {
+    opacity: 1;
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    cursor: none;
+}
+b{
+    font-weight: 700;
+    color: var(--accent-color-two);
+}
+body{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    color: var(--default-color);
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: var(--default-color);
+    background: linear-gradient(60deg, #040213, #000c18, #040213, #000c18, #040213, #000c18, #040213, #000c18, #040213);
+    background-size: 15px 15px;
+    animation: fundo 200s linear;
+
+}
+@keyframes fundo {
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: -100% -100%;
+    }
+    100%{
+        background-position: 0% 0%;
+    }
+}
+.voltar{
+    z-index: 99;
+    transform: rotate(-40deg);
+    font-size: 30px;
+    position: fixed;
+    left: -5px;
+    top: -40px;
+    background-color: var(--title-shadow);
+    margin-left: -60px;
+    padding: 60px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    letter-spacing: 1px;
+    transition: all 0.4s;
+}
+.voltar a{
+    color: var(--default-color);
+    font-family: 'Teko', sans-serif;
+    transition: all 0.4s;
+}
+.voltar:hover{
+    transform: rotate(-40deg) scale(1.2);
+    background-color: var(--title-color);
+}
+.voltar:hover a{
+    color: var(--background-dark);
+}
+ul, a{
+    list-style: none; 
+    padding: 0;
+    text-decoration: none;
+}
+u{
+    color: var(--accent-color);
+    text-decoration: 1px underline var(--accent-color);
+}
+main{
+    margin-bottom: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+h2{
+    color: #ffc300;
+    text-shadow:  6px 5px #003566;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 71px;
+}
+p{
+    margin-inline: auto;
+    text-align: center;
+    width: 80%;
+    font-size: 1.5rem;
+}
+li{
+    font-size: 1.4rem;
+}
+.entenda ol{
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    list-style: none;
+
+}
+.entenda li{
+    padding: 20px;
+    background-position: -100% 0;
+    position: relative;
+    width: fit-content;
+    transition: opacity 0.5s;
+
+}
+.entenda:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.entenda li::before{
+    content: '\2022';
+    font-weight: bold;
+    display: inline-block; 
+    width: 1.5em;
+    margin-left: -1em;
+    color: var(--title-color);
+}
+.entenda li::after{
+    transform: skew(15deg);
+    top: 0;
+    left: 10px;
+    content: '';
+    position: absolute;
+    width: 1px;
+    opacity: 0.5;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.5s;
+    background-color: #00498d;
+
+}
+.entenda li:hover::after{
+    background-color: #00498d;
+    width: 100%;
+    opacity: 1;
+}
+.entenda li:nth-child(1){
+    padding-left: 10px;
+    margin-left: 0;
+}
+.entenda li:nth-child(2){
+    padding-left: 10px;
+    margin-left: 25px;
+}
+.entenda li:nth-child(3){
+    padding-left: 10px;
+    margin-left: 50px;
+}
+.entenda li:nth-child(4){
+    padding-left: 10px;
+    margin-left: 75px;
+}
+.considere,
+.avalie,
+.verifique,
+.seguranca,
+.manutencao,
+.orcamento,
+.reputacao{
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.considere ul,
+.avalie ul,
+.verifique ul,
+.seguranca ul,
+.manutencao ul,
+.orcamento ul,
+.reputacao ul{
+    position: relative;
+    margin-inline: auto;
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    gap: 50px;
+}
+.considere li,
+.avalie li,
+.verifique li,
+.seguranca li,
+.manutencao li{
+    opacity: 0.7;
+    transition: opacity 0.4s, transform 0.3s;
+    padding: 30px;
+    width: 50%;
+    text-align: justify;
+}
+.considere .nada,
+.avalie .nada,
+.verifique .nada,
+.seguranca .nada,
+.manutencao .nada{
+    pointer-events: none;
+    opacity: 1 !important;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    padding: 0.5px;
+    background-color: var(--background-light);
+}
+.considere li:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+.considere:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.avalie li:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+.avalie:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.verifique li:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+.verifique:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.seguranca li:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+.seguranca:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.manutencao li:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+.manutencao:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.orcamento li,
+.reputacao li{
+    opacity: 0.7;
+    transition: opacity 0.4s, transform 0.3s;
+}
+.orcamento li:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+.orcamento:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.reputacao li:hover{
+    transform: scale(1.05);
+    opacity: 1;
+}
+.reputacao:has(li:hover) li:not(:hover){
+    opacity: 0.5;
+}
+.considere::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 120%;
+    height: 40%;
+    top: 200px;
+    left: -5%;
+    background-color: #001224;
+    transform: rotate(10deg);
+}
+.seguranca::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 120%;
+    height: 60%;
+    left: -10%;
+    background-color: #001224;
+    transform: rotate(-20deg);
+}
+.reputacao::before{
+    content: '';
+    z-index: -1;
+    top: 400px;
+    position: absolute;
+    width: 120%;
+    height: 80%;
+    left: -5%;
+    background-color: #001224;
+    transform: rotate(5deg);
+}
