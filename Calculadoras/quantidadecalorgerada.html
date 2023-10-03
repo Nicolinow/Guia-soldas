@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Calculadora de Solda por Resistência a Ponto</title>
+    <title>Calculadora do Calor Gerado pela Solda</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
 </head>
 <body>
-    <h1>Calculadora de Solda por Resistência a Ponto</h1>
-    <h2>Quantidade de Calor Gerada</h2>
-    <form id="weldingCalculator">
-        <label for="current">Corrente Elétrica (A):</label>
-        <input type="number" id="current" required><br>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Calculadora do Calor Gerado pela Solda</h1>
+        <form id="weldingCalculator">
+            <div>
+                <input class="interactable" type="number" id="current" required><br>
+                <label for="current">Corrente Elétrica (A):</label>
+            </div>
+            <div>
+                <input class="interactable" type="number" id="resistance" required><br>
+                <label for="resistance">Resistência Total (Ohms):</label>
+            </div>
+            <div>
+                <input class="interactable" type="number" id="time" required><br>
+                <label for="time">Tempo de Soldagem (s):</label>
+            </div>
+            <span>
+                <input class="interactable" id="calc" type="submit" value="Calcular">
+            </span>
+        </form>
 
-        <label for="resistance">Resistência Total (Ohms):</label>
-        <input type="number" id="resistance" required><br>
-
-        <label for="time">Tempo de Soldagem (s):</label>
-        <input type="number" id="time" required><br>
-
-        <input type="submit" value="Calcular">
-    </form>
-
-    <h2>Resultado:</h2>
-    <div id="result"></div>
-
+        <h1>Resultado:</h1>
+        <div id="result"></div>
+    </main>
     <script>
         document.getElementById("weldingCalculator").addEventListener("submit", function(event) {
             event.preventDefault();
@@ -36,7 +44,13 @@
 
             // Exibir o resultado
             const resultDiv = document.getElementById("result");
-            resultDiv.innerHTML = `<p>Quantidade de Calor Gerada (Q): ${heatGenerated.toFixed(2)} Joules</p>`;
+            resultDiv.style.opacity = 0;
+            resultDiv.style.marginLeft = 0;
+            setTimeout(function() {
+                resultDiv.innerHTML = `<p>Quantidade de Calor Gerada (Q): ${heatGenerated.toFixed(2)} Joules</p>`;
+                resultDiv.style.opacity = 1;
+                resultDiv.style.marginLeft = '20px';
+            }, 200);
         });
 
         function calcularQuantidadeDeCalor(current, resistance, time) {
@@ -46,4 +60,5 @@
         }
     </script>
 </body>
+<script src="/scripts/mouse2.js"></script>
 </html>

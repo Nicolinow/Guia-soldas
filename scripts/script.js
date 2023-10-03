@@ -120,7 +120,6 @@ window.addEventListener('scroll', () => {
     } else {
       seemoresix.classList.remove('active')
     }
-
 });
 function hoverCard(card) {
     const bgColor = card.getAttribute('data-bgcolor');

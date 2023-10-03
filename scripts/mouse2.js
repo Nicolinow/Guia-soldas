@@ -1,19 +1,9 @@
 const custom_cursor = document.getElementById('cursor');
 const pointer = document.getElementById('pointer');
-const iframe = document.querySelector('iframe'); // Selecione seu iframe pelo seletor apropriado
 
 const cursorInitialWidth = custom_cursor.offsetWidth;
 const cursorInitialHeight = custom_cursor.offsetHeight;
 
-iframe.addEventListener('mouseenter', () => {
-  custom_cursor.style.opacity = '0'; 
-  pointer.style.opacity = '0'; 
-});
-
-iframe.addEventListener('mouseleave', () => {
-  custom_cursor.style.opacity = '1'; 
-  pointer.style.opacity = '1'; 
-});
 const animateCursor = (event, interacting, interactable) => {
   let cursorX = `calc(${event.clientX}px - 1.125rem)`,
       cursorY = `calc(${event.clientY}px - 1.125rem)`;
@@ -50,6 +40,6 @@ const animateCursor = (event, interacting, interactable) => {
 window.onmousemove = (event) => {
   const interactable = event.target.closest('.interactable'),
         interacting = (interactable !== null);
-        
+  
   animateCursor(event, interacting, interactable);
 };

@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    --default-color:#dbdbdb;
+    --title-color:#ffc300;
+    --title-shadow:#003566;
+    --background-dark:#040213; 
+    --background-light:#e5e7ffa1;
+    --accent-color: #00498d;
+    --accent-color-two: #0065c4;
+    --placeholder-color: #000130b9;
+}
+#cursor {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    border: 2px solid #89a7e780;
+    transition: 200ms opacity 100ms ease, background-color 200ms ease, border 0.6s;
+}
+#pointer{
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    background-color: #8c7af1;
+    transition: 200ms opacity 100ms ease, background-color 0.6s;
+}
+body:hover > #cursor {
+    opacity: 1;
+}
+body:hover > #pointer {
+    opacity: 1;
+}
+html{
+    overflow: hidden;
+}
+*{
+    cursor: none;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-dark);
+    color: var(--default-color);
+}
+main{
+    height: 100dvh;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: start;
+}
+form div:nth-child(n + 2){
+    margin-top: -10%;
+}
+form div{
+    position: relative;
+    display: flex;
+    width: fit-content;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 23px;
+}
+form:has(select) div:nth-child(1){
+    position: relative;
+}
+form:has(select) div:nth-child(1) label{
+    position: absolute;
+    top: 9%;
+    width: fit-content;
+    left: 10px;
+}
+form:has(select) div:nth-child(1) select{
+    border: none;
+    outline: 1px solid var(--background-dark);
+    outline-offset: -4px;
+    padding: 14px;
+    text-align: start;
+    border-radius: 5px;
+    background-color: var(--default-color);
+    transition: outline-offset 0.2s, outline 0.4s, border-radius 0.2s;
+    transition-delay: 0.1s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 97%;
+    background-position-y: 50%;
+    width: 250px;
+}
+form:has(select) div:nth-child(1) select:focus{
+    border-radius: 5px 5px 0 0;
+    outline: 1px solid var(--accent-color-two);
+    outline-offset: 5px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+form:has(select) div:nth-child(1) select ~ label{
+    top: -22%;
+    font-size: 1rem;
+    color: #000130;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    left: 0;
+}
+h1{
+    color: #ffcf30;
+    text-shadow:  3px 3px #002446;
+    text-align: start;
+    font-size: clamp(1.5rem, 3dvw, 3rem);
+}
+form div label{
+    width: max-content;
+    transition: 0.2s;
+    pointer-events: none;
+    user-select: none;
+    background-color: var(--default-color);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.4rem;
+    padding-inline: 5px;
+    position: absolute;
+    left: 10px;
+    top: 9%;
+    color: var(--placeholder-color);
+}
+form div input{
+    outline: 1px solid var(--background-dark);
+    border-radius: 5px;
+    outline-offset: -4px;
+    color: var(--background-dark);
+    background-color: var(--default-color);
+    border: none;
+    padding: 15px;
+    width: 220px;
+    transition: outline-offset 0.2s, outline 0.4s, border-radius 0.2s;
+    transition-delay: 0.1s;
+}
+form div input:focus{
+    outline: 1px solid var(--accent-color-two);
+    outline-offset: 5px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+form div input:focus ~ label{
+    top: -20%;
+    width: max-content;
+    font-size: 0.9rem;
+    color: #000130;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    left: 0;
+}
+form div input:valid {
+    background-color: var(--default-color);
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+form div input:valid ~ label{
+    top: -20%;
+    font-size: 0.9rem;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    left: 0;
+}
+span{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+#calc{
+    top: -20px;
+    position: absolute; 
+    width: 250px;
+    background-color: var(--default-color);
+    font-family: 'Teko', sans-serif;
+    font-size: 1.5rem;
+    outline: 1px solid var(--background-dark);
+    outline-offset: -4px;
+    border: 0;
+    transition: all 0.3s;
+}
+#calc:hover{
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    outline-offset: 8px;
+    color: var(--default-color);
+    outline: 1px solid var(--title-color);
+}
+#calc:active{
+    outline: 1px solid var(--title-shadow);
+    color: var(--background-dark);
+    scale: 0.98;
+    outline-offset: 5px;
+    transition: all 0.05s;
+}
+h1:nth-child(3){
+    margin-top: 5%;
+}
+#result{
+    margin-top: -6%;
+    transition: opacity 0.2s, margin-left 0.3s;
+}
+#resultado{
+    transition: opacity 0.2s, margin-left 0.3s;
+}
+main:has(#soldabilidadeCalculator) form,
+main:has(.ipsum) form{
+    display: grid;
+    column-gap: 10px;
+    row-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+}
+main:has(#soldabilidadeCalculator) form div,
+main:has(.ipsum) form div{
+    margin-top: 0;
+    margin-bottom: -30px;
+}
+main:has(#soldabilidadeCalculator) form div:nth-child(7),
+main:has(.ipsum) form div:nth-child(7){
+    margin-top: 0;
+    margin-bottom: -8px;
+}
+main:has(#soldabilidadeCalculator) form div:nth-child(8),
+main:has(.ipsum) form div:nth-child(8){
+    margin-top: 0;
+    margin-bottom: -8px;
+}
+main:has(#soldabilidadeCalculator) form span{
+    display: flex;
+    margin-left: 61%;
+}
+main:has(.ipsum) form span{
+    margin-top: 20px;
+    margin-left: 55%;
+}
+main:has(#soldabilidadeCalculator) form span button{
+    width: 200px;
+}
+main:has(#lorem) form span button{
+    width: 260px;
+    margin-left: -30px;
+}
+.resultado{
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.resultado div{
+    font-size: 0.9rem;
+}
+b1{
+    font-size: inherit;
+    color: rgb(60, 255, 60);
+}
+b2{
+    font-size: inherit;
+    color: rgb(255, 255, 60);
+}
+b3{
+    font-size: inherit;
+    color: rgb(255, 60, 60);
+}
+.duty{
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+}
+.duty label{
+    top: 18%;
+}
+.duty input:focus ~ label{
+    top: -35%;
+}
+.duty input:valid ~ label{
+    top: -35%;
+}
+main:has(.duty) p:last-child{
+    margin-top: -4%;
+    font-size: 0.7rem;
+}
+main:has(.duty) p{
+    margin-top: -1%;
+    font-size: 0.9rem;
+}
+main:has(.duty) .resultadoo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 4%;
+}
+main:has(.duty) .resultadoo p{
+    position: absolute;
+    bottom: 0;
+}
+#weldQualityChecker {
+    display: flex; 
+    flex-wrap: wrap;
+    row-gap: 29px;
+    column-gap: 7.5%;
+    width: 100%;
+}
+#weldQualityChecker div:nth-child(2){
+    margin-top: 0;
+}
+#weldQualityChecker div:nth-child(1) input,
+#weldQualityChecker div:nth-child(2) input,
+#weldQualityChecker div:nth-child(5) input{
+    width: 100%;
+}
+#weldQualityChecker div:nth-child(1){
+    margin-bottom: -10%;
+}
+
+#weldQualityChecker div:nth-child(1),
+#weldQualityChecker div:nth-child(2),
+#weldQualityChecker div:nth-child(5){
+    width: 93%;
+}
+#weldQualityChecker div:nth-child(3) input,
+#weldQualityChecker div:nth-child(4) input{
+    width: 90%;
+}
+#weldQualityChecker div:nth-child(3),
+#weldQualityChecker div:nth-child(4){
+    width: 45%;
+}
+#weldQualityChecker span{
+    position: relative;
+    margin-top: -6%;
+    justify-content: center;
+}
+main:has(#weldQualityChecker) h1:nth-child(3){
+    margin-top: -2%;
+}
+main:has(#weldQualityChecker) #result{
+    font-size: 1.2rem;
+}
+
+main:has(table) table{
+    border-collapse: collapse;
+    text-align: center;
+}
+main:has(table) table{
+    border: 2px solid var(--default-color);
+}
+main:has(table) thead tr th{
+    padding: 5px;
+    border: 2px solid var(--default-color);
+    font-size: 1.1rem;
+    background-color: var(--title-shadow);
+    color: var(--title-color);
+}
+main:has(table) tbody tr td{
+
+    border: 1px solid #dbdbdb50;
+    padding: 3px 0;
+}
+main:has(table) tbody tr:nth-child(odd){
+    background-color: #00356621;
+}
+main:has(table) tbody tr:nth-child(even){
+    background-color: #0035666b;
+}
+@media (min-width: 800px) {
+    span{
+        width: 170px;
+    }
+    #calc{
+        width: 170px;
+        margin-inline: auto;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    h1{
+        color: #ffcf30;
+        text-shadow:  6px 5px #002446;
+        text-align: start;
+        font-size: clamp(1.5rem, 3dvw, 3rem);
+    }
+    form{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 50px;
+        width: 40%;
+    }
+    form div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    form div input{
+        width: 100%;
+    }
+    form div:nth-child(n + 2){
+        margin-top: 0%;
+    }
+    #result{
+        margin-top: -2%;
+        font-size: 1.5rem;
+    }
+    form:has(select){
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1px;
+    }
+    form:has(select) div{
+        align-items: center;
+    }
+    form:has(select) div:nth-child(n + 2) label{
+        align-items: center;
+        left: -4%;
+    }
+    form:has(select) div:nth-child(n + 2) input:focus ~ label{
+        align-items: center;
+        left: -7.5%;
+    }
+    form:has(select) div:nth-child(n + 2) input:valid ~ label{
+        align-items: center;
+        left: -7.5%;
+    }
+    form:has(select) span{
+        align-items: center;
+        margin-top: 4%;
+    }
+    main:has(form div select) h1:nth-child(3){
+        align-items: center;
+        margin-top: 2%;
+    }
+    main:has(#soldabilidadeCalculator) form div:nth-child(7){
+        margin-top: 0;
+        margin-bottom: -8px;
+    }
+    main:has(#soldabilidadeCalculator) form div:nth-child(8){
+        margin-top: 0;
+        margin-bottom: -8px;
+    }
+    main:has(#soldabilidadeCalculator) form{
+        row-gap: 20px;
+        position: relative;
+    }
+    main:has(#soldabilidadeCalculator) div{
+        margin-inline: auto;
+    }
+    main:has(#soldabilidadeCalculator) span{
+        position: absolute;
+    }
+    main:has(#soldabilidadeCalculator) button{
+        position: absolute;
+        left: -98%;
+        top: 160px;
+    }
+    .resultado{
+        flex-direction: column;
+    }
+    .resultado div{
+        margin-top: -3%;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    #weldCalculator{   
+        margin-left: 80px;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    #weldCalculator div input{
+        width: 250px;
+    }
+    #weldCalculator span input{
+        margin-left: 45px;
+        margin-top: 20px;
+    }
+    main:has(#weldQualityChecker) form div:nth-child(1){
+        margin-bottom: 0;
+    }
+    main:has(#weldQualityChecker) form{
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        width: 32%;
+    }
+    #weldQualityChecker div:nth-child(3) input,
+    #weldQualityChecker div:nth-child(4) input{
+        width: 100%;
+    }
+    #weldQualityChecker div:nth-child(3),
+    #weldQualityChecker div:nth-child(4){
+        width: 93%;
+    }
+    #weldQualityChecker span{
+        margin-top: 8%;
+        transform: scale(1.2);
+        margin-bottom: 10%;
+    }
+    main:has(table) thead tr th{
+        padding: 15px;
+    }
+    main:has(table) tbody tr td{
+        padding: 12girpx;
+    }
+    main:has(table) tbody tr:nth-child(odd){
+        border: 1px solid var(--default-color);
+    }
+
+}

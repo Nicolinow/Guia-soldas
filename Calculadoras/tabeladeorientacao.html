@@ -2,10 +2,14 @@
 <html>
 <head>
     <title>Tabela de Orientação para Soldagem de Chapas Finas Galvanizadas</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
 </head>
 <body>
-    <h1>Tabela de Orientação para Soldagem de Chapas Finas Galvanizadas</h1>
-    <table border="1">
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Tabela de Orientação para Soldagem de Chapas Finas Galvanizadas</h1>
+        <table>
         <thead>
             <tr>
                 <th>Espessura da Chapa (mm)</th>
@@ -67,6 +71,8 @@
             </tr>
             <!-- Adicione mais linhas com dados de orientação conforme necessário -->
         </tbody>
-    </table>
+        </table>
+    </main>
 </body>
+<script src="/scripts/mouse2.js"></script>
 </html>
