@@ -520,7 +520,7 @@ main:has(table) tbody tr:nth-child(even){
         padding: 15px;
     }
     main:has(table) tbody tr td{
-        padding: 12girpx;
+        padding: 12px;
     }
     main:has(table) tbody tr:nth-child(odd){
         border: 1px solid var(--default-color);

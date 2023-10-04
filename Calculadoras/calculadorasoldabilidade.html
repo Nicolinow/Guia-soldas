@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="stylecalculadoras.css">
 </head>
 <body>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
     <main>
-    <h1>Calculadora de Soldabilidade</h1>
-    <form id="soldabilidadeCalculator">
+        <h1>Calculadora de Soldabilidade</h1>
+        <form id="soldabilidadeCalculator">
         <div>
             <input type="number" id="carbono" step="0.01" required ><br>
             <label for="carbono">Teor de Carbono (%)</label>
@@ -43,11 +45,11 @@
         <span>
             <button id="calc" type="button" onclick="calcularCarbonoEquivalente()">Calcular Carbono Equivalente</button>
         </span>
-    </form>
-    <div class="resultado" id="lorem">
-        <h1>Resultado:</h1>
-        <div id="resultado"></div>
-    </div>
+        </form>
+        <div class="resultado" id="lorem">
+            <h1>Resultado:</h1>
+            <div id="resultado"></div>
+        </div>
     </main>
     <script>
        
@@ -89,5 +91,6 @@
 
     </script>
 </body>
+<script src="/scripts/mouse2.js"></script>
 </html>
 

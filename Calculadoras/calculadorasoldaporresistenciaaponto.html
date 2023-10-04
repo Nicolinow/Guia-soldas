@@ -5,9 +5,11 @@
     <link rel="stylesheet" href="stylecalculadoras.css">
 </head>
 <body>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
     <main>
-    <h1>Calculadora de Solda por Resistência a Ponto</h1>
-    <form id="weldCalculator" class="ipsum">
+        <h1>Calculadora de Solda por Resistência a Ponto</h1>
+        <form id="weldCalculator" class="ipsum">
     <div>
         <input type="number" id="current" required><br>
         <label for="current">Corrente de Soldagem (A)</label>
@@ -35,10 +37,10 @@
         <span>
             <input type="submit" value="Calcular" id="calc">
         </span>
-    </form>
+        </form>
 
-    <h1>Resultado:</h1>
-    <div id="result"></div>
+        <h1>Resultado:</h1>
+        <div id="result"></div>
 
     </main>
     <script>
@@ -80,5 +82,6 @@
         });
     </script>
 </body>
+<script src="/scripts/mouse2.js"></script>
 </html>
 

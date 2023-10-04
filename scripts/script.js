@@ -11,6 +11,9 @@ window.addEventListener('scroll', () => {
     const seemorefour = document.querySelector('.see__more.four')
     const seemorefive = document.querySelector('.see__more.five')
     const seemoresix = document.querySelector('.see__more.six')
+    const seemoreseven = document.querySelector('.see__more.seven')
+    const seemoreseight = document.querySelector('.see__more.eight')
+
 
     const shrinkPoint1 = 900; 
     const shrinkPoint2 = 550;
@@ -22,7 +25,9 @@ window.addEventListener('scroll', () => {
     const shrinkPoint5 = 6300;
     const shrinkPoint6 = 10300;
     const shrinkPoint7 = 10700;
-    const shrinkPoints = [6450, 6750, 7050, 7300, 7500, 7750, 8050, 8350, 8550];
+    const shrinkPoint8 = 12900;
+    const shrinkPoint9 = 12500;
+    const shrinkPoints = [6500, 6800, 7100, 7400, 7700, 8050, 8250, 8550, 8850];
     const elements = document.querySelectorAll('[class^="det"]');
     const customClass = 'custom';
     elements.forEach((element, index) => {
@@ -54,7 +59,7 @@ window.addEventListener('scroll', () => {
               element.classList.remove(customClass);
             }
             if (index === 8){
-                if (scrollY > 8650){
+                if (scrollY > 9000){
                     element.classList.remove(customClass);
                 }
             }
@@ -119,6 +124,16 @@ window.addEventListener('scroll', () => {
       seemoresix.classList.add('active')
     } else {
       seemoresix.classList.remove('active')
+    }
+    if (scrollY > shrinkPoint8){
+      seemoreseven.classList.add('active')
+    } else {
+      seemoreseven.classList.remove('active')
+    }
+    if (scrollY > shrinkPoint9){
+      seemoreeight.classList.add('active')
+    } else {
+      seemoreeight.classList.remove('active')
     }
 });
 function hoverCard(card) {
