@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
     const seemorefive = document.querySelector('.see__more.five')
     const seemoresix = document.querySelector('.see__more.six')
     const seemoreseven = document.querySelector('.see__more.seven')
-    const seemoreseight = document.querySelector('.see__more.eight')
+    const seemoreeight = document.querySelector('.see__more.eight')
 
 
     const shrinkPoint1 = 900; 
