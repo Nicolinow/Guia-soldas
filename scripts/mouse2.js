@@ -4,7 +4,7 @@ const pointer = document.getElementById('pointer');
 const cursorInitialWidth = custom_cursor.offsetWidth;
 const cursorInitialHeight = custom_cursor.offsetHeight;
 
-const animateCursor = (event, interacting, interactable) => {
+const animateCursor = (event, interacting) => {
   let cursorX = `calc(${event.clientX}px - 1.125rem)`,
       cursorY = `calc(${event.clientY}px - 1.125rem)`;
   
@@ -24,8 +24,6 @@ const animateCursor = (event, interacting, interactable) => {
 
   const cursor_keyframes = {
     transform: `translate(${cursorX}, ${cursorY})`,
-    width: interacting ? `${cursor.width}px` : '2em',
-    height: interacting ? `${cursor.height}px` : '2em',
     borderRadius: radius,
     padding: scale,
     backgroundColor: background,

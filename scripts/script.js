@@ -1,3 +1,41 @@
+
+    let shrinkPoint1, shrinkPoint2, shrinkPoint25, shrinkPoint3, shrinkPoint35, shrinkPoint4, shrinkPoint45, shrinkPoint5, shrinkPoint6, shrinkPoint7, shrinkPoint8, shrinkPoint9, shrinkPoints;
+
+    function setBreakpoints() {
+    if (window.innerWidth <= 1440) {
+      shrinkPoint1 = 900; 
+      shrinkPoint2 = 630;
+      shrinkPoint25 = 650;
+      shrinkPoint3 = 3200;
+      shrinkPoint35 = 2100
+      shrinkPoint4 = 3500;
+      shrinkPoint45 = 4200;
+      shrinkPoint5 = 6500;
+      shrinkPoint6 = 10900;
+      shrinkPoint7 = 11700;
+      shrinkPoint8 = 13900;
+      shrinkPoint9 = 14800;
+      shrinkPoints = [6800, 7100, 7400, 7700, 8000, 8300, 8600, 8900, 9200];
+    } else {
+        shrinkPoint1 = 900; 
+        shrinkPoint2 = 550;
+        shrinkPoint25 = 650;
+        shrinkPoint3 = 3300;
+        shrinkPoint35 = 1950
+        shrinkPoint4 = 3500;
+        shrinkPoint45 = 4000;
+        shrinkPoint5 = 6300;
+        shrinkPoint6 = 10300;
+        shrinkPoint7 = 10700;
+        shrinkPoint8 = 12900;
+        shrinkPoint9 = 12500;
+        shrinkPoints = [6500, 6800, 7100, 7400, 7700, 8050, 8250, 8550, 8850];
+      }
+    }
+    
+    window.addEventListener('resize', setBreakpoints);
+    
+    setBreakpoints();
 window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const floatingHeader = document.querySelector('.floating-header');
@@ -13,27 +51,13 @@ window.addEventListener('scroll', () => {
     const seemoresix = document.querySelector('.see__more.six')
     const seemoreseven = document.querySelector('.see__more.seven')
     const seemoreeight = document.querySelector('.see__more.eight')
-
-
-    const shrinkPoint1 = 900; 
-    const shrinkPoint2 = 550;
-    const shrinkPoint25 = 650;
-    const shrinkPoint3 = 3300;
-    const shrinkPoint35 = 1950
-    const shrinkPoint4 = 3500;
-    const shrinkPoint45 = 4000;
-    const shrinkPoint5 = 6300;
-    const shrinkPoint6 = 10300;
-    const shrinkPoint7 = 10700;
-    const shrinkPoint8 = 12900;
-    const shrinkPoint9 = 12500;
-    const shrinkPoints = [6500, 6800, 7100, 7400, 7700, 8050, 8250, 8550, 8850];
+  
     const elements = document.querySelectorAll('[class^="det"]');
     const customClass = 'custom';
     elements.forEach((element, index) => {
-        if (scrollY > shrinkPoints[index]) {
-          element.classList.add('active');
-        }
+      if (scrollY > shrinkPoints[index]) {
+        element.classList.add('active');
+      }
     });
 
     let currentIndex = -1; 
@@ -59,7 +83,7 @@ window.addEventListener('scroll', () => {
               element.classList.remove(customClass);
             }
             if (index === 8){
-                if (scrollY > 9000){
+                if (scrollY > 9500){
                     element.classList.remove(customClass);
                 }
             }

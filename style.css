@@ -356,21 +356,9 @@ main{
     position: absolute;    
     top: -200px;
 }
-#dicas{
-    visibility: hidden;
-    position: absolute;    
-    top: -200px;
-}
-#outras{
-    visibility: hidden;
-    position: absolute;    
-    top: -200px;
-}
-#tipos__maquinas{
-    visibility: hidden;
-    position: absolute;    
-    top: -200px;
-}
+#dicas,
+#outras,
+#tipos__maquinas,
 #calculadoras{
     visibility: hidden;
     position: absolute;    
@@ -1789,9 +1777,6 @@ footer {
     margin-left: 0;
     margin-top: -6%;
 }
-.see__more.two.active{
-    margin-top: -7%;
-}
 .see__more.three{
     position: relative;
 }
@@ -1801,6 +1786,30 @@ footer {
 .see__more.three::after{
     border-radius: 5px;
 }
+.input1:checked + label:before,
+.input1:checked + label:after,
+.input2:checked + label:before,
+.input2:checked + label:after,
+.input3:checked + label:before,
+.input3:checked + label:after,
+.input4:checked + label:before,
+.input4:checked + label:after{
+    height: 100%;
+}
+.input1:checked + label:after,
+.input2:checked + label:after,
+.input3:checked + label:after,
+.input4:checked + label:after{
+	background: var(--accent-color-two);
+    left: 2px;
+}
+.input1:checked + label,
+.input2:checked + label,
+.input3:checked + label,
+.input4:checked + label{
+    color: var(--accent-color);
+}
+
 .see__more.four{
     margin-top: 10px;
 }
@@ -1825,13 +1834,11 @@ footer {
 .see__more.out{
     pointer-events: all;
     color: var(--accent-color-two);
-    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), 0.3s margin 0.5s;	
 }
 .see__more.out:hover{
     margin-left: 1px;
     margin-right: 5px;
     color: var(--accent-color);
-    transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1), margin 0.3s;	
 }
 .see__more.out::after{
     border-radius: 5px;

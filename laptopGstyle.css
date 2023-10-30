@@ -1,0 +1,137 @@
+
+@media screen and (width <= 1440px) {
+    .header{
+        height: 8rem;
+    }
+    .header:hover{
+        height: 11rem;
+    }
+    .header nav{
+        margin-top: -20px;
+    }
+    .resume{
+        overflow-y: hidden;
+        scrollbar-gutter: stable;
+    }
+    .resume:hover{
+        overflow-y: auto;
+    }
+    .resume::before{
+        height: 135%;
+    }
+    .floating-header{
+        height: 100px;
+    }
+    .diferencia__section__card{
+        gap: 20px;
+        align-items: center;
+        align-items: start;
+    }
+    .card__section{
+        width: 40%;
+    }
+    .Pcard{
+        height: fit-content;
+    }
+    .cards{
+        display: none;
+    }
+    .see__more.two{
+        bottom: 10px;
+    }
+    .swiper{
+        top: 12%;
+    }
+    .swiper-wrapper{
+        height: fit-content !important;
+    }
+    .aplicacao__conclusao{
+        bottom: -1px;
+    }
+    .pre__pre__tipos__materiais{
+        height: 91vh;
+    }
+    .metais{
+        width: 25%;
+        height: 14rem;
+    }
+    .tecnologia p{
+        font-size: 1.18rem;
+    }
+    .item{
+        font-size: 1.8rem;
+    }
+    .tecnologia__exemplos{
+        margin-left: -37%;
+    }
+    .description{
+        right: 9%;
+    }
+    .truques{
+        height: 2700px;
+    }
+    .det h4{
+        text-align: center;
+    }
+    .det.active:nth-child(1){
+        height: 11%;
+    }
+    .det.active:nth-child(2){
+        height: 10%;
+    }
+    .det.active:nth-child(3){
+        height: 11%;
+    }
+    .det.active:nth-child(3) p{
+        transform: translateY(90px);
+    }
+    .det.active:nth-child(4){
+        height: 9%;
+    }
+    .det.active:nth-child(5){
+        height: 9%;
+    }
+    .det.active:nth-child(6){
+        height: 9%;
+    }
+    .det.active:nth-child(7){
+        height: 8%;
+    }
+    .det.active:nth-child(8){
+        height: 10%;
+    } 
+    .det.active:nth-child(8) p{
+        transform: translateY(90px);
+    }   
+    .det.active:nth-child(9){
+        height: 10%;
+    }
+    .see__more.five{
+        bottom: 10px;
+        font-size: 1.3rem;
+    }
+    .input3:checked + label + div > p{
+        transform: translateY(150px);
+    }
+    .tipos__solda{
+        gap: 26px;
+    }
+    .solda p{
+        font-size: 1.13rem;
+    }
+    .HOVER{
+        height: 340px;
+    }
+    .calculadoras{
+        margin: 0;
+    }
+    .calculadoras li{
+        white-space: pre;
+    }
+    .calculadoras iframe{
+        width: 700px;
+    }
+    .videos > .links_ul{
+        width: 120%;
+    }
+}
