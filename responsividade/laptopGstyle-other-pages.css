@@ -1,0 +1,28 @@
+@media screen and (width <= 1440px) {
+    main{
+        overflow: hidden;
+        margin-bottom: 0;
+    }
+    .accordion{
+        width: 90vw;
+        margin-top: 140vh;
+    }
+    .estagio{
+        position: relative;
+    }
+    .card p{
+        width: calc(43dvw + 1rem);
+    }
+    .card:nth-child(1).active{
+        z-index: -1;
+        flex-grow: 6;
+        opacity: 1;
+        height: 42dvh;
+    }
+    .card:nth-child(4).active{
+        z-index: -1;
+        flex-grow: 6;
+        opacity: 1;
+        height:39dvh;
+    }
+}

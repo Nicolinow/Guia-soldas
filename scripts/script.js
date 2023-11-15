@@ -9,7 +9,7 @@
       shrinkPoint3 = 3200;
       shrinkPoint35 = 2100
       shrinkPoint4 = 3500;
-      shrinkPoint45 = 4200;
+      shrinkPoint45 = 4100;
       shrinkPoint5 = 6500;
       shrinkPoint6 = 10900;
       shrinkPoint7 = 11700;
