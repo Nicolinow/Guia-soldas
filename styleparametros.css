@@ -194,3 +194,6 @@ h2{
 .img2 img{
     width: 40%;
 }
+.parametros p:nth-child(1){
+    margin-top: 40px;
+}
