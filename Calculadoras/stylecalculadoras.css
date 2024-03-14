@@ -77,13 +77,13 @@ form div{
 form:has(select) div:nth-child(1){
     position: relative;
 }
-form:has(select) div:nth-child(1) label{
+form:has(select) label{
     position: absolute;
     top: 9%;
     width: fit-content;
     left: 10px;
 }
-form:has(select) div:nth-child(1) select{
+form:has(select) select{
     border: none;
     outline: 1px solid var(--background-dark);
     outline-offset: -4px;
@@ -102,14 +102,14 @@ form:has(select) div:nth-child(1) select{
     background-position-y: 50%;
     width: 250px;
 }
-form:has(select) div:nth-child(1) select:focus{
+form:has(select) select:focus{
     border-radius: 5px 5px 0 0;
     outline: 1px solid var(--accent-color-two);
     outline-offset: 5px;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-form:has(select) div:nth-child(1) select ~ label{
+form:has(select) select ~ label{
     top: -22%;
     font-size: 1rem;
     color: #000130;
@@ -210,6 +210,30 @@ span{
 }
 h1:nth-child(3){
     margin-top: 5%;
+}
+/* classeletrodos.html */
+.r{
+    margin-top: 2% !important;
+}
+form.a{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 10px;
+    justify-content: center;
+}
+form.a div{
+    margin-top: 0;
+}
+form.a label{
+    left: 0 !important;
+}
+main:has(form.a) span{
+    margin-top: 20px;
+    justify-content: center;
+}
+main:has(form.a) #result{
+    margin-top: -15px;
 }
 #result{
     margin-top: -6%;
