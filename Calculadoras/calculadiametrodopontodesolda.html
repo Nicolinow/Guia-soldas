@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Diâmetro do Ponto de Solda</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
+</head>
+<body>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Calculadora de Diâmetro do Ponto de Solda</h1>
+        <form id="weldDiameterCalculator">
+        <div>
+            <select id="diagramType" required class="interactable">
+                <option value="symmetrical">Symmetrical (Simétrico)</option>
+                <option value="asymmetrical">Asymmetrical (Assimétrico)</option>
+                <option value="partial">Partial (Parcial)</option>
+            </select><br>
+            <label for="diagramType">Tipo de Diagrama</label>
+        </div>
+        <div>
+            <input type="number" id="d1" required class="interactable"><br>
+            <label for="d1">Diâmetro 1 (mm)</label>
+        </div>
+        <div>
+            <input type="number" id="d2" required class="interactable"><br>
+            <label for="d2">Diâmetro 2 (mm)</label>
+        </div>
+        <div>
+            <input type="number" id="d3" required class="interactable"><br>
+            <label for="d3">Diâmetro 3 (mm)</label>
+        </div>
+        <span>
+            <input type="submit" value="Calcular Diâmetro" id="calc" class="interactable">
+        </span>
+        </form>
+
+        <h1>Resultado:</h1>
+        <div id="result"></div>
+    </main>
+    <script>
+        document.getElementById("weldDiameterCalculator").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obter o tipo de diagrama selecionado
+            const diagramType = document.getElementById("diagramType").value;
+
+            // Obter os valores de entrada dos diâmetros
+            const d1 = parseFloat(document.getElementById("d1").value);
+            const d2 = parseFloat(document.getElementById("d2").value);
+            const d3 = parseFloat(document.getElementById("d3").value);
+
+            // Calcular o diâmetro do ponto de solda com base no tipo de diagrama
+            let weldDiameter;
+
+            if (diagramType === "symmetrical") {
+                // Fórmula para Symmetrical (Simétrico): dp = (d1 + d2) / 2
+                weldDiameter = (d1 + d2) / 2;
+            } else if (diagramType === "asymmetrical") {
+                // Fórmula para Asymmetrical (Assimétrico): ad = dp = (d1 + d2) / 2
+                weldDiameter = (d1 + d2) / 2;
+            } else if (diagramType === "partial") {
+                // Fórmula para Partial (Parcial): dp = (d2 + d3) / 2
+                weldDiameter = (d2 + d3) / 2;
+            }
+
+            // Exibir o resultado
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.opacity = 0;
+            resultDiv.style.marginLeft = 0; 
+            setTimeout(function() {
+                resultDiv.innerHTML = `<p>Diâmetro do Ponto de Solda: ${weldDiameter.toFixed(2)} mm</p>`;
+                resultDiv.style.opacity = 1; 
+                resultDiv.style.marginLeft = '20px';
+            }, 200);
+        });
+    </script>
+</body>
+<script src="/scripts/mouse2.js"></script>
+</html>
+
