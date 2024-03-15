@@ -207,7 +207,14 @@
             resultDiv.style.marginLeft = '20px';
         }, 200);
     } else {
-      document.getElementById("result").innerText = "Por favor, selecione todos os critérios.";
+      const resultDiv = document.getElementById("result");
+        resultDiv.style.opacity = 0;
+        resultDiv.style.marginLeft = 0;
+        setTimeout(function () {
+            resultDiv.innerHTML = "Por favor, selecione todos os critérios.";
+            resultDiv.style.opacity = 1;
+            resultDiv.style.marginLeft = '20px';
+        }, 200);
     }
   }
 </script>
