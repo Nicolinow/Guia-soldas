@@ -11,7 +11,7 @@
         <h1>Calculadora de Diâmetro do Ponto de Solda</h1>
         <form id="weldDiameterCalculator">
         <div>
-            <select id="diagramType" required>
+            <select id="diagramType" required class="interactable">
                 <option value="symmetrical">Symmetrical (Simétrico)</option>
                 <option value="asymmetrical">Asymmetrical (Assimétrico)</option>
                 <option value="partial">Partial (Parcial)</option>
@@ -19,19 +19,19 @@
             <label for="diagramType">Tipo de Diagrama</label>
         </div>
         <div>
-            <input type="number" id="d1" required><br>
+            <input type="number" id="d1" required class="interactable"><br>
             <label for="d1">Diâmetro 1 (mm)</label>
         </div>
         <div>
-            <input type="number" id="d2" required><br>
+            <input type="number" id="d2" required class="interactable"><br>
             <label for="d2">Diâmetro 2 (mm)</label>
         </div>
         <div>
-            <input type="number" id="d3" required><br>
+            <input type="number" id="d3" required class="interactable"><br>
             <label for="d3">Diâmetro 3 (mm)</label>
         </div>
         <span>
-            <input type="submit" value="Calcular Diâmetro" id="calc">
+            <input type="submit" value="Calcular Diâmetro" id="calc" class="interactable">
         </span>
         </form>
 
@@ -65,13 +65,13 @@
             }
 
             // Exibir o resultado
-            result.style.opacity = 0;
-            result.style.marginLeft = 0; 
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.opacity = 0;
+            resultDiv.style.marginLeft = 0; 
             setTimeout(function() {
-                const resultDiv = document.getElementById("result");
                 resultDiv.innerHTML = `<p>Diâmetro do Ponto de Solda: ${weldDiameter.toFixed(2)} mm</p>`;
-                result.style.opacity = 1; 
-                result.style.marginLeft = '20px';
+                resultDiv.style.opacity = 1; 
+                resultDiv.style.marginLeft = '20px';
             }, 200);
         });
     </script>

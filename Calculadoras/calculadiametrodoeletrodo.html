@@ -5,25 +5,36 @@
     <link rel="stylesheet" href="stylecalculadoras.css">
 </head>
 <body>
+    <style>
+        @media (width < 600px) {
+            #result{
+                margin-top: -30px !important;
+            }
+        }
+        #result{
+            margin-top: -40px;
+        }
+
+    </style>
     <div id='cursor' class="mouse"></div>
     <div id='pointer'></div>
     <main>
         <h1>Calculadora de Diâmetro do Eletrodo</h1>
         <form id="electrodeCalculator">
             <div>
-                <input type="number" id="thickness1" required><br>
+                <input type="number" id="thickness1" required class="interactable"> class="interactable"<br>
                 <label for="thickness1">Espessura da Chapa 1 (mm)</label>
             </div>
             <div>
-                <input type="number" id="thickness2" required><br>
+                <input type="number" id="thickness2" required class="interactable"><br>
                 <label for="thickness2">Espessura da Chapa 2 (mm)</label>
             </div>
             <div>
-                <input type="number" id="thickness3" required><br>
+                <input type="number" id="thickness3" required class="interactable"><br>
                 <label for="thickness3">Espessura da Chapa 3 (mm)</label>
             </div>
             <span>
-                <input type="submit" value="Calcular" id="calc">
+                <input type="submit" value="Calcular" id="calc" class="interactable">
             </span>
         </form>
 

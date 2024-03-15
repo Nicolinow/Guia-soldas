@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora quantidade de calor</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
+</head>
+<body>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Calculadora quantidade de calor gerada</h1>
+        <form id="weldingCalculator">
+            <div>
+                <input type="number" id="current" required class="interactable"><br>
+                <label for="current">Corrente Elétrica (A):</label>
+            </div>
+
+            <div>
+                <input type="number" id="resistance" step="any" required class="interactable"><br>
+                <label for="resistance">Resistência Total (Ohms):</label>
+            </div>
+
+            <div>
+                <input type="number" id="time" required class="interactable"><br>
+                <label for="time">Tempo de Soldagem (s):</label>
+            </div>
+            <span>
+                <input type="submit" value="Calcular" id="calc" class="interactable"">
+            </span>
+        </form>
+
+        <h1>Resultado:</h1>
+        <div id="result"></div>
+    </main>
+    <script>
+        document.getElementById("weldingCalculator").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obter os valores de entrada
+            const current = parseFloat(document.getElementById("current").value);
+            const resistance = parseFloat(document.getElementById("resistance").value);
+            const time = parseFloat(document.getElementById("time").value);
+
+            // Calcular a quantidade de calor gerada (Q) usando a Lei de Joule
+            const heatGenerated = calcularQuantidadeDeCalor(current, resistance, time);
+
+            // Exibir o resultado
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<p>Quantidade de Calor Gerada (Q): ${heatGenerated.toFixed(2)} Joules</p>`;
+        });
+
+        function calcularQuantidadeDeCalor(current, resistance, time) {
+            // Utilizar a fórmula Q = I² * R * t para calcular a quantidade de calor
+            const heatGenerated = Math.pow(current, 2) * resistance * time;
+            result.style.opacity = 0;
+            result.style.marginLeft = '-20px'; 
+            result.style.marginTop = '-10px';
+            setTimeout(function() {
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = `${heatGenerated}`;
+                result.style.opacity = 1; 
+                result.style.marginLeft = '0';
+            }, 200);
+        }
+    </script>
+    <script src="/scripts/mouse2.js"></script>
+</body>
+</html>

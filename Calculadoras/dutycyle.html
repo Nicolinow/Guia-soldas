@@ -26,14 +26,14 @@
         <div class="resultadoo">
             <h1>Resultado:</h1>
             <div id="resultado"></div>
-            <p>Calculadora que permite inserir o tempo de funcionamento em horas e a corrente máxima em Amps. Quando o botão "Calcular" é clicado, ele calculará o Duty Cycle com base nos valores inseridos e exibirá o resultado na página.</p>
+            <p style="opacity: 0.8;">Calculadora que permite inserir o tempo de funcionamento em horas e a corrente máxima em Amps. Quando o botão "Calcular" é clicado, ele calculará o Duty Cycle com base nos valores inseridos e exibirá o resultado na página.</p>
         </div>
     </main>
     <script>
-        // Função genérica para exibir resultados com animação de fade-in
         function exibirResultado(resultDiv, resultado) {
             resultDiv.style.opacity = 0;
             resultDiv.style.marginLeft = 0;
+            resultDiv.style.marginTop = '-17px';
             setTimeout(function() {
                 resultDiv.innerHTML = resultado;
                 resultDiv.style.opacity = 1;

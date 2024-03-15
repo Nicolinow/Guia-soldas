@@ -57,11 +57,16 @@ body{
 }
 main{
     height: 100dvh;
-    margin-left: 10px;
     display: flex;
     flex-direction: column;
     gap: 8px;
     align-items: start;
+    align-items: center;
+}
+@media (width < 600px) {
+    main{
+        margin-left: 10px;
+    }
 }
 form div:nth-child(n + 2){
     margin-top: -10%;
@@ -122,6 +127,11 @@ h1{
     text-shadow:  3px 3px #002446;
     text-align: start;
     font-size: clamp(1.5rem, 3dvw, 3rem);
+}
+@media (width < 600px) {
+    h1{
+        margin-top: 0;
+    }
 }
 form div label{
     width: max-content;
@@ -251,6 +261,11 @@ main:has(.ipsum) form span{
 main:has(#soldabilidadeCalculator) form span button{
     width: 200px;
 }
+@media (width < 600px) {
+    main:has(#soldabilidadeCalculator) form span button{
+        margin-top: -10px;
+    }
+}
 main:has(#lorem) form span button{
     width: 260px;
     margin-left: -30px;
@@ -306,6 +321,47 @@ main:has(.duty) .resultadoo{
 main:has(.duty) .resultadoo p{
     position: absolute;
     bottom: 0;
+    left: 0;
+    text-align: justify;
+}
+@media (width < 600px) {
+    #weldDiameterCalculator{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 10px;
+    }
+    #weldDiameterCalculator div{
+        margin-top: 0;
+        gap: 0;
+    }
+    #weldDiameterCalculator span{
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+}
+main:has(#weldDiameterCalculator) #result{
+    margin-top: -30px;
+}
+/*calcsoldaresistenciaponto2.html*/
+#weldCalculator.ipsum{
+    margin-left: 0;
+}
+#weldCalculator.ipsum{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#weldCalculator.ipsum span{
+    width: 100%;
+    justify-content: center;
+    margin-left: 0 !important;
+}
+@media (width < 600px){
+    #weldCalculator span input {
+        margin: 0 !important;
+    }
 }
 #weldQualityChecker {
     display: flex; 
@@ -375,155 +431,4 @@ main:has(table) tbody tr:nth-child(odd){
 }
 main:has(table) tbody tr:nth-child(even){
     background-color: #0035666b;
-}
-@media (min-width: 800px) {
-    span{
-        width: 170px;
-    }
-    #calc{
-        width: 170px;
-        margin-inline: auto;
-    }
-    main{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    h1{
-        color: #ffcf30;
-        text-shadow:  6px 5px #002446;
-        text-align: start;
-        font-size: clamp(1.5rem, 3dvw, 3rem);
-    }
-    form{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 50px;
-        width: 40%;
-    }
-    form div{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 10px;
-    }
-    form div input{
-        width: 100%;
-    }
-    form div:nth-child(n + 2){
-        margin-top: 0%;
-    }
-    #result{
-        margin-top: -2%;
-        font-size: 1.5rem;
-    }
-    form:has(select){
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1px;
-    }
-    form:has(select) div{
-        align-items: center;
-    }
-    form:has(select) div:nth-child(n + 2) label{
-        align-items: center;
-        left: -4%;
-    }
-    form:has(select) div:nth-child(n + 2) input:focus ~ label{
-        align-items: center;
-        left: -7.5%;
-    }
-    form:has(select) div:nth-child(n + 2) input:valid ~ label{
-        align-items: center;
-        left: -7.5%;
-    }
-    form:has(select) span{
-        align-items: center;
-        margin-top: 4%;
-    }
-    main:has(form div select) h1:nth-child(3){
-        align-items: center;
-        margin-top: 2%;
-    }
-    main:has(#soldabilidadeCalculator) form div:nth-child(7){
-        margin-top: 0;
-        margin-bottom: -8px;
-    }
-    main:has(#soldabilidadeCalculator) form div:nth-child(8){
-        margin-top: 0;
-        margin-bottom: -8px;
-    }
-    main:has(#soldabilidadeCalculator) form{
-        row-gap: 20px;
-        position: relative;
-    }
-    main:has(#soldabilidadeCalculator) div{
-        margin-inline: auto;
-    }
-    main:has(#soldabilidadeCalculator) span{
-        position: absolute;
-    }
-    main:has(#soldabilidadeCalculator) button{
-        position: absolute;
-        left: -98%;
-        top: 160px;
-    }
-    .resultado{
-        flex-direction: column;
-    }
-    .resultado div{
-        margin-top: -3%;
-        text-align: center;
-        font-size: 1.5rem;
-    }
-    #weldCalculator{   
-        margin-left: 80px;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-    }
-    #weldCalculator div input{
-        width: 250px;
-    }
-    #weldCalculator span input{
-        margin-left: 45px;
-        margin-top: 20px;
-    }
-    main:has(#weldQualityChecker) form div:nth-child(1){
-        margin-bottom: 0;
-    }
-    main:has(#weldQualityChecker) form{
-        gap: 0;
-        display: flex;
-        flex-direction: column;
-        width: 32%;
-    }
-    #weldQualityChecker div:nth-child(3) input,
-    #weldQualityChecker div:nth-child(4) input{
-        width: 100%;
-    }
-    #weldQualityChecker div:nth-child(3),
-    #weldQualityChecker div:nth-child(4){
-        width: 93%;
-    }
-    #weldQualityChecker span{
-        margin-top: 8%;
-        transform: scale(1.2);
-        margin-bottom: 10%;
-    }
-    main:has(table) thead tr th{
-        padding: 15px;
-    }
-    main:has(table) tbody tr td{
-        padding: 12px;
-    }
-    main:has(table) tbody tr:nth-child(odd){
-        border: 1px solid var(--default-color);
-    }
-
 }

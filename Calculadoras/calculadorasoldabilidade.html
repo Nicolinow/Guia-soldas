@@ -11,39 +11,39 @@
         <h1>Calculadora de Soldabilidade</h1>
         <form id="soldabilidadeCalculator">
         <div>
-            <input type="number" id="carbono" step="0.01" required ><br>
+            <input type="number" id="carbono" step="0.01" required class="interactable" ><br>
             <label for="carbono">Teor de Carbono (%)</label>
         </div>
         <div>
-            <input type="number" id="manganese" step="0.01" required><br>
+            <input type="number" id="manganese" step="0.01" required class="interactable"><br>
             <label for="manganese">Teor de Manganês (%)</label>
         </div>
         <div>
-            <input type="number" id="cromo" step="0.01" required><br> 
+            <input type="number" id="cromo" step="0.01" required class="interactable"><br> 
             <label for="cromo">Teor de Cromo (%)</label>
         </div>
         <div>
-            <input type="number" id="molibdenio" step="0.01" required><br>
+            <input type="number" id="molibdenio" step="0.01" required class="interactable"><br>
             <label for="molibdenio">Teor de Molibdênio (%)</label>
         </div>
         <div>
-            <input type="number" id="vanadio" step="0.01" required><br>
+            <input type="number" id="vanadio" step="0.01" required class="interactable"><br>
             <label for="vanadio">Teor de Vanádio (%)</label>
         </div>
         <div>
-            <input type="number" id="niquel" step="0.01" required><br>
+            <input type="number" id="niquel" step="0.01" required class="interactable"><br>
             <label for="niquel">Teor de Níquel (%)</label>
         </div>
         <div>
-            <input type="number" id="cobre" step="0.01" required><br>
+            <input type="number" id="cobre" step="0.01" required class="interactable"><br>
             <label for="cobre">Teor de Cobre (%)</label>
         </div>
         <div>
-            <input type="number" id="espessura" required><br>
+            <input type="number" id="espessura" required class="interactable"><br>
             <label for="espessura">Espessura da Peça (mm)</label>
         </div>
         <span>
-            <button id="calc" type="button" onclick="calcularCarbonoEquivalente()">Calcular Carbono Equivalente</button>
+            <button id="calc" type="button" onclick="calcularCarbonoEquivalente()" class="interactable">Calcular Carbono Equivalente</button>
         </span>
         </form>
         <div class="resultado" id="lorem">

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabela de Orientação para Soldagem de Chapas Finas Galvanizadas</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
+</head>
+<body>
+    <style>
+        main{
+            font-size: 1rem !important;
+            margin: 0 !important;
+        }
+        @media (width < 600px) {
+            main{
+                font-size: 0.65rem !important;
+                margin: 0 !important;
+            } 
+            h1{
+                margin-top: 0 !important; 
+            }
+        }
+    </style>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Tabela de Orientação para Soldagem de Chapas Finas Galvanizadas</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Espessura da Chapa (mm)</th>
+                    <th>Tipo de Solda</th>
+                    <th>Tamanho do Eletrodo (mm)</th>
+                    <th>Corrente (A)</th>
+                    <th>Tempo de Soldagem (s)</th>
+                    <th>Observações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Menos de 1</td>
+                    <td>Ponto</td>
+                    <td>3</td>
+                    <td>50-100</td>
+                    <td>5-10</td>
+                    <td>Utilizar baixa corrente para evitar perfuração da chapa</td>
+                </tr>
+                <tr>
+                    <td>1-2</td>
+                    <td>Ponto</td>
+                    <td>3</td>
+                    <td>100-150</td>
+                    <td>10-15</td>
+                    <td>Verificar a aderência do revestimento após a soldagem</td>
+                </tr>
+                <tr>
+                    <td>2-3</td>
+                    <td>Costura</td>
+                    <td>3</td>
+                    <td>150-200</td>
+                    <td>15-20</td>
+                    <td>Aumentar a corrente para garantir penetração adequada</td>
+                </tr>
+                <tr>
+                    <td>Mais de 3</td>
+                    <td>Costura</td>
+                    <td>3</td>
+                    <td>200-250</td>
+                    <td>20-25</td>
+                    <td>Cuidado com o risco de deformação da chapa devido ao calor</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+<script src="/scripts/mouse2.js"></script>
+</html>
+

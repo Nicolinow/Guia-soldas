@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabela de Pré-Aquecimento para Tipos de Aço</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
+</head>
+<body>
+    <style>
+        main{
+            font-size: 1rem !important;
+            margin: 0 !important;
+        }
+        @media (width < 600px) {
+            main{
+                font-size: 0.7rem !important;
+                margin: 0 !important;
+            } 
+            h1{
+                margin-top: 0 !important;
+            }
+        }
+    </style>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Tabela de Pré-Aquecimento para Tipos de Aço</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de Aço</th>
+                    <th>Espessura da Chapa (mm)</th>
+                    <th>Processo de Soldagem</th>
+                    <th>Temperatura de Pré-Aquecimento (°C)</th>
+                    <th>Observações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aço Carbono</td>
+                    <td>6-12</td>
+                    <td>SMAW (Eletrodo Revestido)</td>
+                    <td>150-200</td>
+                    <td>Pré-aquecimento uniforme recomendado</td>
+                </tr>
+                <tr>
+                    <td>Aço Carbono</td>
+                    <td>12-25</td>
+                    <td>GTAW (TIG)</td>
+                    <td>100-150</td>
+                    <td>Pré-aquecimento localizado pode ser necessário</td>
+                </tr>
+                <tr>
+                    <td>Aço Liga (AISI 4130)</td>
+                    <td>Qualquer</td>
+                    <td>GMAW (MIG/MAG)</td>
+                    <td>200-250</td>
+                    <td>Alta temperatura de pré-aquecimento recomendada</td>
+                </tr>
+                <tr>
+                    <td>Aço Inoxidável (304)</td>
+                    <td>3-6</td>
+                    <td>FCAW (Arco Submerso)</td>
+                    <td>50-100</td>
+                    <td>Baixa temperatura de pré-aquecimento recomendada</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+<script src="/scripts/mouse2.js"></script>
+</html>

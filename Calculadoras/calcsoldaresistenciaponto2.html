@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Energia, Penetração e Indentação de Soldagem</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
+</head>
+<body>
+    <style>
+        @media (width < 600px) {
+            h1:nth-child(3){
+                margin-top: 4%;
+            }
+            #result{
+                margin-top: -40px !important;
+                font-size: 12px;
+            }
+            form{
+                flex-direction: row !important;
+            }
+        }
+        form{
+            flex-direction: column;
+        }
+        #result{
+            margin-top: -10px;
+        }   
+
+    </style>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Calculadora de Energia, Penetração e Indentação de Soldagem</h1>
+        <form id="weldCalculator" class="ipsum">
+            <div>
+                <input type="number" id="current" required class="interactable"><br>
+                <label for="current">Corrente de Soldagem (A):</label>
+            </div>
+
+            <div>
+                <input type="number" id="weldTime" required class="interactable"><br>
+                <label for="weldTime">Tempo de Soldagem (ms):</label>
+            </div>
+
+            <div>
+                <input type="number" id="postPressureTime" required class="interactable"><br>
+                <label for="postPressureTime">Tempo de Pós-Pressão (ms):</label>
+            </div>
+
+            <div>
+                <input type="number" id="currentRiseTime" required class="interactable"><br>
+                <label for="currentRiseTime">Tempo de Subida de Corrente (ms):</label>
+            </div>
+
+            <div>
+                <input type="number" id="currentFallTime" required class="interactable"><br>
+                <label for="currentFallTime">Tempo de Descida de Corrente (ms):</label>
+            </div>
+
+            <span>
+                <input type="submit" value="Calcular" id="calc" class="interactable">
+            </span>
+        </form>
+
+        <h1 >Resultado:</h1>
+        <div id="result"></div>
+    </main>
+
+
+    <script>
+        document.getElementById("weldCalculator").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Obter os valores de entrada
+            const current = parseFloat(document.getElementById("current").value);
+            const weldTime = parseFloat(document.getElementById("weldTime").value);
+            const postPressureTime = parseFloat(document.getElementById("postPressureTime").value);
+            const currentRiseTime = parseFloat(document.getElementById("currentRiseTime").value);
+            const currentFallTime = parseFloat(document.getElementById("currentFallTime").value);
+
+            // Realizar cálculos
+            const energyConsumption = current * (weldTime + postPressureTime + currentRiseTime + currentFallTime);
+            const weldPenetration = current * (weldTime + postPressureTime);
+            const indentation = current * (currentRiseTime + currentFallTime);
+
+            result.style.opacity = 0;
+            result.style.marginLeft = 0; 
+            setTimeout(function() {
+                const resultDiv = document.getElementById("result");
+                resultDiv.innerHTML = `
+                    <p>Energia Consumida durante a Soldagem: ${energyConsumption.toFixed(2)} kA*s <br>
+                    Penetração da Solda: ${weldPenetration.toFixed(2)} mm <br>
+                    Indentação (i): ${indentation.toFixed(2)} kA*s</p>
+                `;
+                result.style.opacity = 1; 
+                result.style.marginLeft = '20px';
+            }, 200);
+        });
+    </script>
+    <script src="/scripts/mouse2.js"></script>
+</body>
+</html>
+
+
