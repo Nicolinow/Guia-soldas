@@ -123,9 +123,9 @@ form:has(select) select ~ label{
     left: 0;
 }
 h1{
+    text-align: center;
     color: #ffcf30;
     text-shadow:  3px 3px #002446;
-    text-align: start;
     font-size: clamp(1.5rem, 3dvw, 3rem);
 }
 @media (width < 600px) {
