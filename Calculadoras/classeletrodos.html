@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selecionar Materiais a Ser Soldado</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
+</head>
+<body>
+    <style>
+      form{
+        flex-direction: column;
+      }
+      @media (width < 1000px) {
+        form{
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        form.a{
+          row-gap: 20px;
+        }
+        span{
+          margin-top: -20px;
+        }
+        #result{
+          margin-top: -20px;
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+    <h1>Classificação dos eletrodos de soldagem a ponto pela RWMA</h1>
+    <form id="formSelecao" class="a"> 
+        <div>
+        <select id="grupo" onchange="atualizarOpcoes()">
+            <option value="">Selecione</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <label for="grupo">Grupo:</label>
+      </div>
+
+      <div>
+        <select id="classe" onchange="atualizarOpcoes()">
+            <option value="">Selecione</option>
+        </select>
+        <label for="classe">Classe RWMA:</label>
+      </div>
+
+      <div>
+        <select id="material" onchange="atualizarOpcoes()">
+            <option value="">Selecione</option>
+        </select>
+        <label for="material">Material do Eletrodo:</label>
+      </div>
+
+      <div>
+        <select id="condutividade" onchange="atualizarOpcoes()">
+            <option value="">Selecione</option>
+        </select>
+        <label for="condutividade">Condutividade (% IACS min.):</label>
+      </div>
+
+      <div>
+        <select id="dureza">
+            <option value="">Selecione</option>
+        </select>
+        <label for="dureza">Dureza (HRB min.):</label>
+      </div>
+
+      <span>
+        <input type="button" onclick="calcularResultado()" value="Calcular Resultado" id="calc"></input>
+      </span>
+  </form>
+
+  <h1 class="r">Resultado:</h1>
+  <div id="result"></div>
+</main>
+<script>
+  var tabelaRWMA = [
+    { Grupo: 'A', ClasseRWMA: 1, MaterialEletrodo: 'Cobre – Zircônio', Condutividade: 80, Dureza: 65, MateriaisSoldados: 'Ligas de alumínio, ligas de magnésio, materiais revestidos (galvanizados), latão e bronze' },
+    { Grupo: 'A', ClasseRWMA: 2, MaterialEletrodo: 'Cobre – Cromo', Condutividade: 75, Dureza: 75, MateriaisSoldados: 'Aços laminados a frio e a quente, aços inoxidável, latão e bronze de baixa condutividade e soldagem de aços galvanizados' },
+    { Grupo: 'A', ClasseRWMA: 3, MaterialEletrodo: 'Cobre - Cobalto - Berílio – Níquel', Condutividade: 45, Dureza: 90, MateriaisSoldados: 'Materiais de alta resistência como aços inoxidáveis, aços níquel-cromo' },
+    { Grupo: 'B', ClasseRWMA: 10, MaterialEletrodo: 'Cobre – Tungstênio', Condutividade: 45, Dureza: 72, MateriaisSoldados: 'Materiais altamente condutores como: ligas de Cu e Ag, eletro-conformação, eletroforjamento. Materiais pouco condutores como aços inoxidáveis, onde altas forças devem ser aplicadas' },
+    { Grupo: 'B', ClasseRWMA: 11, MaterialEletrodo: 'Cobre – Tungstênio', Condutividade: 40, Dureza: 94, MateriaisSoldados: 'Materiais altamente condutores como: ligas de Cu e Ag, eletro-conformação, eletroforjamento. Materiais pouco condutores como aços inoxidáveis, onde altas forças devem ser aplicadas' },
+    { Grupo: 'B', ClasseRWMA: 12, MaterialEletrodo: 'Cobre – Tungstênio', Condutividade: 35, Dureza: 98, MateriaisSoldados: 'Materiais altamente condutores como: ligas de Cu e Ag, eletro-conformação, eletroforjamento. Materiais pouco condutores como aços inoxidáveis, onde altas forças devem ser aplicadas' },
+    { Grupo: 'B', ClasseRWMA: 13, MaterialEletrodo: 'Tungstênio', Condutividade: 30, Dureza: 69, MateriaisSoldados: 'Materiais altamente condutores como: ligas de Cu e Ag, eletro-conformação, eletroforjamento. Materiais pouco condutores como aços inoxidáveis, onde altas forças devem ser aplicadas' },
+    { Grupo: 'B', ClasseRWMA: 14, MaterialEletrodo: 'Molibdênio', Condutividade: 30, Dureza: 85, MateriaisSoldados: 'Materiais altamente condutores como: ligas de Cu e Ag, eletro-conformação, eletroforjamento. Materiais pouco condutores como aços inoxidáveis, onde altas forças devem ser aplicadas' },
+    { Grupo: 'C', ClasseRWMA: 20, MaterialEletrodo: 'Materiais Especiais CuAl2O3', Condutividade: 75, Dureza: 75, MateriaisSoldados: 'Metais com revestimento metálico como aços galvanizados, aços doces e aços baixo carbono' }
+  ];
+
+  function atualizarOpcoes() {
+    var grupoSelecionado = document.getElementById("grupo").value;
+    var classeSelecionada = document.getElementById("classe").value;
+    var materialSelecionado = document.getElementById("material").value;
+    var condutividadeSelecionada = document.getElementById("condutividade").value;
+    var classeSelect = document.getElementById("classe");
+    var materialSelect = document.getElementById("material");
+    var condutividadeSelect = document.getElementById("condutividade");
+    var durezaSelect = document.getElementById("dureza");
+
+    // Limpa as opções existentes
+    classeSelect.innerHTML = '<option value="">Selecione</option>';
+    materialSelect.innerHTML = '<option value="">Selecione</option>';
+    condutividadeSelect.innerHTML = '<option value="">Selecione</option>';
+    durezaSelect.innerHTML = '<option value="">Selecione</option>';
+
+    // Filtra as classes, materiais, condutividades e durezas de acordo com o grupo selecionado
+    var classes = tabelaRWMA.filter(function(item) {
+      return item.Grupo === grupoSelecionado;
+    }).map(function(item) {
+      return item.ClasseRWMA;
+    }).filter(function(value, index, self) {
+      return self.indexOf(value) === index;
+    });
+
+    var materiais = tabelaRWMA.filter(function(item) {
+      return item.Grupo === grupoSelecionado &&
+             item.ClasseRWMA == classeSelecionada;
+    }).map(function(item) {
+      return item.MaterialEletrodo;
+    }).filter(function(value, index, self) {
+      return self.indexOf(value) === index;
+    });
+
+    var condutividades = tabelaRWMA.filter(function(item) {
+      return item.Grupo === grupoSelecionado &&
+             item.ClasseRWMA == classeSelecionada &&
+             item.MaterialEletrodo == materialSelecionado;
+    }).map(function(item) {
+      return item.Condutividade;
+    }).filter(function(value, index, self) {
+      return self.indexOf(value) === index;
+    });
+
+    var durezas = tabelaRWMA.filter(function(item) {
+      return item.Grupo === grupoSelecionado &&
+             item.ClasseRWMA == classeSelecionada &&
+             item.MaterialEletrodo == materialSelecionado &&
+             item.Condutividade == condutividadeSelecionada;
+    }).map(function(item) {
+      return item.Dureza;
+    }).filter(function(value, index, self) {
+      return self.indexOf(value) === index;
+    });
+
+    // Adiciona as opções filtradas aos selects
+    classes.forEach(function(classe) {
+      var option = document.createElement("option");
+      option.text = classe;
+      option.value = classe;
+      if (classe == classeSelecionada) option.selected = true;
+      classeSelect.add(option);
+    });
+
+    materiais.forEach(function(material) {
+      var option = document.createElement("option");
+      option.text = material;
+      option.value = material;
+      if (material == materialSelecionado) option.selected = true;
+      materialSelect.add(option);
+    });
+
+    condutividades.forEach(function(condutividade) {
+      var option = document.createElement("option");
+      option.text = condutividade;
+      option.value = condutividade;
+      if (condutividade == condutividadeSelecionada) option.selected = true;
+      condutividadeSelect.add(option);
+    });
+
+    durezas.forEach(function(dureza) {
+      var option = document.createElement("option");
+      option.text = dureza;
+      option.value = dureza;
+      durezaSelect.add(option);
+    });
+  }
+
+  function calcularResultado() {
+    var grupo = document.getElementById("grupo").value;
+    var classe = parseInt(document.getElementById("classe").value);
+    var material = document.getElementById("material").value;
+    var condutividade = parseInt(document.getElementById("condutividade").value);
+    var dureza = parseInt(document.getElementById("dureza").value);
+
+    // Verifica se todos os campos estão preenchidos
+    if (grupo && classe && material && condutividade && dureza) {
+      var resultado = "Resultado não encontrado";
+
+      // Procura a combinação exata de critérios selecionados
+      for (var i = 0; i < tabelaRWMA.length; i++) {
+        if (tabelaRWMA[i].Grupo === grupo &&
+            tabelaRWMA[i].ClasseRWMA === classe &&
+            tabelaRWMA[i].MaterialEletrodo === material &&
+            tabelaRWMA[i].Condutividade === condutividade &&
+            tabelaRWMA[i].Dureza === dureza) {
+          resultado = tabelaRWMA[i].MateriaisSoldados;
+          break;
+        }
+      }
+
+        const resultDiv = document.getElementById("result");
+        resultDiv.style.opacity = 0;
+        resultDiv.style.marginLeft = 0;
+        setTimeout(function () {
+            resultDiv.innerHTML = resultado;
+            resultDiv.style.opacity = 1;
+            resultDiv.style.marginLeft = '20px';
+        }, 200);
+    } else {
+      const resultDiv = document.getElementById("result");
+        resultDiv.style.opacity = 0;
+        resultDiv.style.marginLeft = 0;
+        setTimeout(function () {
+            resultDiv.innerHTML = "Por favor, selecione todos os critérios.";
+            resultDiv.style.opacity = 1;
+            resultDiv.style.marginLeft = '20px';
+        }, 200);
+    }
+  }
+</script>
+<script src="/scripts/mouse2.js"></script>
+</body>
+</html>
+
+

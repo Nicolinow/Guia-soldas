@@ -5,6 +5,25 @@
     <link rel="stylesheet" href="stylecalculadoras.css">
 </head>
 <body>
+    <style>
+        @media (width < 1000px) {
+            form{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                column-gap: 10px;
+            }
+            form div{
+                margin-top: 0 !important;
+                gap: 0;
+            }
+            form  span{
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+    </style>
     <div id='cursor' class="mouse"></div>
     <div id='pointer'></div>
     <main>

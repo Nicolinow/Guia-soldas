@@ -6,24 +6,26 @@
 </head>
 <body>
     <style>
-        @media (width < 600px) {
+        @media (width < 1000px) {
             h1:nth-child(3){
                 margin-top: 4%;
             }
-            #result{
-                margin-top: -40px !important;
+            #resultado{
                 font-size: 12px;
             }
             form{
                 flex-direction: row !important;
             }
         }
+        main h1{
+            text-align: center;
+        }
+        main{
+            transform: scale(0.9);
+        }
         form{
             flex-direction: column;
         }
-        #result{
-            margin-top: -10px;
-        }   
 
     </style>
     <div id='cursor' class="mouse"></div>
@@ -61,8 +63,10 @@
             </span>
         </form>
 
-        <h1 >Resultado:</h1>
-        <div id="result"></div>
+        <div class="resultado" id="lorem">
+            <h1>Resultado:</h1>
+            <div id="resultado"></div>
+        </div>
     </main>
 
 
@@ -82,17 +86,17 @@
             const weldPenetration = current * (weldTime + postPressureTime);
             const indentation = current * (currentRiseTime + currentFallTime);
 
-            result.style.opacity = 0;
-            result.style.marginLeft = 0; 
+            const resultDiv = document.getElementById("resultado");
+            resultDiv.style.opacity = 0;
+            resultDiv.style.marginLeft = 0;
             setTimeout(function() {
-                const resultDiv = document.getElementById("result");
                 resultDiv.innerHTML = `
                     <p>Energia Consumida durante a Soldagem: ${energyConsumption.toFixed(2)} kA*s <br>
                     Penetração da Solda: ${weldPenetration.toFixed(2)} mm <br>
                     Indentação (i): ${indentation.toFixed(2)} kA*s</p>
-                `;
-                result.style.opacity = 1; 
-                result.style.marginLeft = '20px';
+                `;;
+                resultDiv.style.opacity = 1;
+                resultDiv.style.marginLeft = '20px';
             }, 200);
         });
     </script>
