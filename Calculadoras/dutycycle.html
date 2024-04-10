@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Duty Cycle</title>
+    <link rel="stylesheet" href="stylecalculadoras.css">
+</head>
+<body>
+    <style>
+        h1:nth-child(3) {
+            margin-top: 1%;
+        }
+        @media (width < 600px) {
+            h1:nth-child(3){
+                margin-top: -4%;
+            }
+        }
+    </style>
+    <div id='cursor' class="mouse"></div>
+    <div id='pointer'></div>
+    <main>
+        <h1>Calculadora de Duty Cycle</h1>
+        <form class="duty">
+            <div>
+                <input type="number" required id="tempoTotal" min="1" value="480" class="interactable">
+                <label for="tempoTotal">Tempo Total de Operação (minutos):</label>
+            </div>
+            <div>
+                <input type="number" required id="correnteMaxima" min="1" value="50" class="interactable">
+                <label for="correnteMaxima">Corrente Máxima (ampères):</label>
+            </div>
+            <div>
+                <input type="number" required id="dutyCycle" min="1" value="60" class="interactable">
+                <label for="dutyCycle">Duty Cycle (%):</label>
+            </div>
+            <span>
+                <button class="interactable" type="button" id="calc" onclick="calcularTempoOperacao()">Calcular</button><br><br>
+            </span>
+        </form>
+        <h1>Resultado:</h1>
+        <div class="resultadoo">
+            <div id="resultado"></div>
+        </div>
+    </main>
+    <script>
+        function exibirResultado(resultDiv, resultado) {
+            resultDiv.style.opacity = 0;
+            resultDiv.style.marginLeft = 0;
+            setTimeout(function() {
+                resultDiv.innerHTML = resultado;
+                resultDiv.style.opacity = 1;
+                resultDiv.style.marginLeft = '20px';
+            }, 200);
+        }
+
+        function calcularTempoOperacao() {
+            var tempoTotal = parseInt(document.getElementById("tempoTotal").value);
+            var correnteMaxima = parseInt(document.getElementById("correnteMaxima").value);
+            var dutyCycle = parseInt(document.getElementById("dutyCycle").value) / 100;
+
+            var tempoOperacaoPermitido = dutyCycle * tempoTotal;
+            var tempoOperacaoHoras = Math.floor(tempoOperacaoPermitido / 60);
+            var tempoOperacaoMinutos = tempoOperacaoPermitido % 60;
+
+            var resultadoDiv = document.getElementById("resultado")
+            var resultado = `Tempo de Operação Permitido: ${tempoOperacaoHoras} horas e ${tempoOperacaoMinutos.toFixed()} minutos`;
+
+            exibirResultado(resultadoDiv, resultado);
+        }
+    </script>
+</body>
+<script src="/scripts/mouse2.js"></script>
+</html>

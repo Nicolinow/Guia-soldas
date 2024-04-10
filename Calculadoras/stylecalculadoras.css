@@ -316,7 +316,6 @@ main:has(.duty) p{
 main:has(.duty) .resultadoo{
     display: flex;
     flex-direction: column;
-    margin-top: 4%;
 }
 main:has(.duty) .resultadoo p{
     position: absolute;
