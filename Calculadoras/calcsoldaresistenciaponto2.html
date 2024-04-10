@@ -26,7 +26,6 @@
         form{
             flex-direction: column;
         }
-
     </style>
     <div id='cursor' class="mouse"></div>
     <div id='pointer'></div>
@@ -73,7 +72,7 @@
     <script>
         document.getElementById("weldCalculator").addEventListener("submit", function(event) {
             event.preventDefault();
-
+            
             // Obter os valores de entrada
             const current = parseFloat(document.getElementById("current").value);
             const weldTime = parseFloat(document.getElementById("weldTime").value);
