@@ -39,6 +39,12 @@
             </div>
         </div>
     </header>
+    <div class="search">
+        <form id="searchForm" action="https://scholar.google.com/scholar" method="GET" target="_blank">
+            <input type="text" id="searchInput" name="q" placeholder="Pesquisar no Google Acadêmico">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
     <header class="floating-header">
         <div class="floating-header-content">
             <i class="fa-solid fa-sort-down" style="color: #a0a0a0d3;"></i>
@@ -705,6 +711,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+<!-- Search bar "engine" -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+  
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+      if (!searchInput.value) {
+        event.preventDefault();
+        alert('Por favor, insira um termo de pesquisa!');
+      } else {
+        document.getElementById('searchForm').action = 'https://scholar.google.com/scholar?q=' + encodeURIComponent(searchInput.value);
+      }
+    });
+  </script>
 <script src="/scripts/focus.js"></script>
 <script src="/scripts/mouse.js"></script>
 <script src="/scripts/script.js"></script>
