@@ -63,11 +63,6 @@ main{
     align-items: start;
     align-items: center;
 }
-@media (width < 600px) {
-    main{
-        margin-left: 10px;
-    }
-}
 form div:nth-child(n + 2){
     margin-top: -10%;
 }
@@ -127,11 +122,6 @@ h1{
     color: #ffcf30;
     text-shadow:  3px 3px #002446;
     font-size: clamp(1.5rem, 3dvw, 3rem);
-}
-@media (width < 600px) {
-    h1{
-        margin-top: 0;
-    }
 }
 form div label{
     width: max-content;
@@ -285,11 +275,6 @@ main:has(.ipsum) form span{
 main:has(#soldabilidadeCalculator) form span button{
     width: 200px;
 }
-@media (width < 600px) {
-    main:has(#soldabilidadeCalculator) form span button{
-        margin-top: -10px;
-    }
-}
 main:has(#lorem) form span button{
     width: 260px;
     margin-left: -30px;
@@ -347,23 +332,6 @@ main:has(.duty) .resultadoo p{
     left: 0;
     text-align: justify;
 }
-@media (width < 600px) {
-    #weldDiameterCalculator{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        column-gap: 10px;
-    }
-    #weldDiameterCalculator div{
-        margin-top: 0;
-        gap: 0;
-    }
-    #weldDiameterCalculator span{
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-}
 main:has(#weldDiameterCalculator) #result{
     margin-top: -30px;
 }
@@ -380,11 +348,6 @@ main:has(#weldDiameterCalculator) #result{
     width: 100%;
     justify-content: center;
     margin-left: 0 !important;
-}
-@media (width < 600px){
-    #weldCalculator span input {
-        margin: 0 !important;
-    }
 }
 #weldQualityChecker {
     display: flex; 
@@ -444,10 +407,10 @@ main:has(table) thead tr th{
     background-color: var(--title-shadow);
     color: var(--title-color);
 }
-main:has(table) tbody tr td{
+main:has(table) tbody tr td{ 
 
     border: 1px solid #dbdbdb50;
-    padding: 3px 0;
+    padding: 3px 10px;
 }
 main:has(table) tbody tr:nth-child(odd){
     background-color: #00356621;
